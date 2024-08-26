@@ -2,7 +2,7 @@
 title: Welcome to my blog
 slug: my-first-post
 date: 2024-08-26
-description: My first blog post on my new blog, powered by Analog—the Angular meta-framework.
+description: My first blog post on my new blog, powered by Analog, the Angular meta-framework.
 coverImage: forest_fog.jpg
 tags: C#, TypeScript, Angular, UI Library, TailwindCSS
 ---
@@ -21,7 +21,7 @@ The short answer? Probably not. While custom libraries can be powerful, there ar
 
 ## Enter Analog: The Angular Meta-Framework
 
-A few months ago, I stumbled upon [Analog](https://analogjs.org/) while searching for an Angular blog template. I had previously attempted to create my own blog template but had to put it on hold due to time constraints. Thankfully, I've recently found the time to revisit this project, and setting up a blog with the Analog template was a breeze. Analog, of course, is not a blog template—it's a meta-framework that allows you to build Angular applications quickly and efficiently by providing a set of pre-built components, services, and utilities like [SSR](https://angular.io/guide/ssr), [SSG](https://angular.dev/guide/prerendering), [file based routing](https://analogjs.org/docs/features/routing/overview), and more. Like what Next.js is to React, Analog is to Angular.
+A few months ago, I stumbled upon [Analog](https://analogjs.org/) while searching for an Angular blog template. I had previously attempted to create my own blog template but had to put it on hold due to time constraints. Thankfully, I've recently found the time to revisit this project, and setting up a blog with the Analog template was a breeze. Analog, of course, is not a blog template, it's a meta-framework that allows you to build Angular applications quickly and efficiently by providing a set of pre-built components, services, and utilities like [SSR](https://angular.io/guide/ssr), [SSG](https://angular.dev/guide/prerendering), [file based routing](https://analogjs.org/docs/features/routing/overview), and more. Like what Next.js is to React, Analog is to Angular.
 
 ## This Blog's Setup
 
