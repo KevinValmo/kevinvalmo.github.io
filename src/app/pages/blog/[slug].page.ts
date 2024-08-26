@@ -11,7 +11,7 @@ import { NavigatorService } from '../../core/services/navigator.service';
   imports: [AsyncPipe, MarkdownComponent, DatePipe],
   template: `
     @if (post$ | async; as post) {
-    <article>
+    <article class="max-w-7xl">
       <div
         class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center"
         style="background-image: url('/{{ post.attributes.coverImage }}')"
