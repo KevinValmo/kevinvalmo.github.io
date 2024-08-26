@@ -8,28 +8,29 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   template: `
-    <h1>Blog Archive</h1>
-    @for (post of posts;track post.attributes.slug) {
-    <a [routerLink]="['/blog/', post.attributes.slug]">
-      <h2 class="post__title">{{ post.attributes.title }}</h2>
-      <p class="post__desc">{{ post.attributes.description }}</p>
-    </a>
-    }
+    <div class="grid grid-flow-col  gap-4">
+      @for (post of posts;track post.attributes.slug) {
+      <div
+        class="card  bg-base-200 shadow-xl h-72 w-80 hover:cursor-pointer hover:shadow-2xl transition-all"
+        [routerLink]="['/blog/', post.attributes.slug]"
+      >
+        <div
+          class="p-2 bg-cover bg-center h-32 rounded-t-xl"
+          style="background-image: url({{ post.attributes.coverImage }});"
+        ></div>
+        <div class="card-body">
+          <h2 class="card-title">{{ post.attributes.title }}</h2>
+          <p>{{ post.attributes.description }}</p>
+          <div class="flex flex-wrap gap-2">
+            @for (tag of post.attributes.tags.split(','); track $index) {
+            <div class="badge badge-primary">{{ tag }}</div>
+            }
+          </div>
+        </div>
+      </div>
+      }
+    </div>
   `,
-  styles: [
-    `
-      a {
-        text-align: left;
-        display: block;
-        margin-bottom: 2rem;
-      }
-
-      .post__title,
-      .post__desc {
-        margin: 0;
-      }
-    `,
-  ],
 })
 export default class BlogComponent {
   readonly posts = injectContentFiles<PostAttributes>();

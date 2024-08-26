@@ -16,13 +16,6 @@ import PostAttributes from '../../post-attributes';
     </article>
     }
   `,
-  styles: [
-    `
-      .post__image {
-        max-height: 40vh;
-      }
-    `,
-  ],
 })
 export default class BlogPostComponent {
   readonly post$ = injectContent<PostAttributes>('slug');
