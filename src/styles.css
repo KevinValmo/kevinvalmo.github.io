@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply p-4;
+.menu :where(li:not(.menu-title) > *:not(ul, details, .menu-title, .btn)),
+.menu :where(li:not(.menu-title) > details > summary:not(.menu-title)) {
+  @apply rounded-2xl;
+}
+
+analog-markdown a {
+  @apply text-pink-700 !important;
 }
