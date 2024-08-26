@@ -12,7 +12,10 @@ import { NavigatorService } from '../../core/services/navigator.service';
   template: `
     @if (post$ | async; as post) {
     <article>
-      <img class="rounded-3xl mb-4" [src]="'/' + post.attributes.coverImage" />
+      <div
+        class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center"
+        style="background-image: url('/{{ post.attributes.coverImage }}')"
+      ></div>
 
       <div class="flex flex-col gap-2 ">
         <div class="text-4xl font-bold">{{ post.attributes.title }}</div>

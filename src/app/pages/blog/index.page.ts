@@ -12,7 +12,7 @@ import { NavigatorService } from '../../core/services/navigator.service';
   standalone: true,
   imports: [RouterLink, DatePipe],
   template: `
-    <div class="grid grid-cols-4 gap-4">
+    <div class="flex flex-wrap gap-4 justify-center">
       @for (post of posts(); track post.attributes.slug) {
       <div
         class="card max-w-64 p-2 bg-base-200 outline-2 outline outline-base-300 shadow-xl hover:cursor-pointer hover:shadow-2xl transition-all"
