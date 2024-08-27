@@ -4,11 +4,12 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 
 import PostAttributes from '../../post-attributes';
 import { NavigatorService } from '../../core/services/navigator.service';
+import TagBadgeComponent from "../../core/components/tag-badge.component";
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [AsyncPipe, MarkdownComponent, DatePipe],
+  imports: [AsyncPipe, MarkdownComponent, DatePipe, TagBadgeComponent],
   template: `
     @if (post$ | async; as post) {
     <article class="max-w-7xl">
@@ -22,13 +23,7 @@ import { NavigatorService } from '../../core/services/navigator.service';
         <div class="italic">{{ post.attributes.description }}</div>
         <div class="flex gap-2 ml-auto mr-0">
           @for (tag of post.attributes.tags.split(','); track $index) {
-          <div
-            class="py-3 hover:cursor-pointer hover:badge-accent transition-all duration-300 badge badge-neutral"
-            (click)="navigator.navigateToBlogPostByTag($event, tag)"
-            title="Back to blog posts with this tag 🏷️"
-          >
-            {{ tag }}
-          </div>
+            <kvsrc-tag-badge [tag]="tag" />
           }
         </div>
         <div class="text-gray-600 italic text-right">

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { NavigatorService } from '../../core/services/navigator.service';
+import TagBadgeComponent from '../../core/components/tag-badge.component';
 
 @Component({
   selector: 'app-about',
@@ -22,18 +24,15 @@ import { Component } from '@angular/core';
           about them.
           <div class="divider"></div>
           <div class="flex gap-2 mt-2 flex-wrap">
-            @for (technologie of technologies; track $index) {
-            <div
-              class="py-3 hover:cursor-pointer hover:badge-primary transition-all duration-300 badge badge-neutral"
-            >
-              {{ technologie }}
-            </div>
+            @for (technology of technologies; track $index) {
+            <kvsrc-tag-badge [tag]="technology" />
             }
           </div>
         </div>
       </div>
     </div>
   `,
+  imports: [TagBadgeComponent],
 })
 export default class AboutComponent {
   protected readonly technologies = [
@@ -45,4 +44,5 @@ export default class AboutComponent {
     'Docker',
     'SQL',
   ];
+  protected readonly navigator = inject(NavigatorService);
 }

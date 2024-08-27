@@ -6,16 +6,17 @@ import { DatePipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { NavigatorService } from '../../core/services/navigator.service';
+import TagBadgeComponent from '../../core/components/tag-badge.component';
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [RouterLink, DatePipe],
+  imports: [RouterLink, DatePipe, TagBadgeComponent],
   template: `
     <div class="flex flex-wrap gap-4 justify-center">
       @for (post of posts(); track post.attributes.slug) {
       <div
-        class="card max-w-64 p-2 bg-base-200 outline-2 outline outline-base-300 shadow-xl hover:cursor-pointer hover:shadow-2xl transition-all"
+        class="card max-w-64 p-2 bg-base-200 outline-2 outline outline-base-300 hover:cursor-pointer hover:brightness-110 transition-all duration-300"
         [routerLink]="['/blog/', post.attributes.slug]"
       >
         <div
@@ -27,12 +28,7 @@ import { NavigatorService } from '../../core/services/navigator.service';
           <p>{{ post.attributes.description }}</p>
           <div class="flex flex-wrap gap-2">
             @for (tag of post.attributes.tags.split(','); track $index) {
-            <div
-              class="py-3 hover:cursor-pointer hover:badge-accent transition-all duration-300 badge badge-neutral"
-              (click)="navigator.navigateToBlogPostByTag($event, tag)"
-            >
-              {{ tag }}
-            </div>
+            <kvsrc-tag-badge [tag]="tag" />
             }
           </div>
         </div>
