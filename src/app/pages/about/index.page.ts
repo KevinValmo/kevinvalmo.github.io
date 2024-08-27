@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
       </div>
 
       <div class="mt-6 flex flex-col gap-2">
-        <div>I solve problems with code. Oh, and I'm a web developer.</div>
+        <div>I'm a web developer.</div>
         <div>
           Below please find a list of technologies I've been working with
           lately. Just click on the badges to see if I've written any posts
