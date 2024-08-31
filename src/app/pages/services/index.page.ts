@@ -7,7 +7,7 @@ import { HeaderService } from '../..//core/services/header.service';
   selector: 'app-services',
   standalone: true,
   template: `
-    <div class="flex flex-col items-center justify-center">
+    <div class="flex flex-col items-center justify-center max-w-7xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div class="card shadow-lg bg-base-200">
           <div class="card-body">
