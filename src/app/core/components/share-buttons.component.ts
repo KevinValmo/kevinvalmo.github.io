@@ -1,9 +1,6 @@
-import { ContentFile } from '@analogjs/content';
-import { HttpClient } from '@angular/common/http';
-import { Component, computed, inject, input, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import PostAttributes from 'src/app/post-attributes';
 
 @Component({
   selector: 'kvsrc-share-buttons',
@@ -37,7 +34,6 @@ export default class ShareButtonsComponent {
 
   isLeftAligned = computed(() => this.align() === 'left');
   isRightAligned = computed(() => this.align() === 'right');
-  source = signal('kevinvalmo.github.io');
   message = signal('Check out this post! 🚀');
 
   linkedInIcon = faLinkedin;
@@ -47,7 +43,11 @@ export default class ShareButtonsComponent {
     {
       name: 'LinkedIn',
       icon: faLinkedin,
-      url: `https://www.linkedin.com/shareArticle?mini=true&url=${this.url()}`,
+      url: `https://www.linkedin.com/feed/?shareArticle=true?&text=${this.message()}${this.url()}`,
     },
   ]);
 }
+
+// https://www.linkedin.com/feed/
+//?shareActive=true
+//&text=Today%20I%20completed%20%22Share%20on%20LinkedIn%20-%20LinkedIn%20%7C%20Microsoft%20Learn%22!%20I%27m%20so%20proud%20to%20be%20celebrating%20this%20achievement%20and%20hope%20this%20inspires%20you%20to%20start%20your%20own%20%40MicrosoftLearn%20journey!%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fen-us%2Flinkedin%2Fconsumer%2Fintegrations%2Fself-serve%2Fshare-on-linkedin%3Fcontext%3Dlinkedin%252Fconsumer%252Fcontext%26WT.mc_id%3Dlinkedin
