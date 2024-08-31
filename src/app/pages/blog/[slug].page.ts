@@ -75,7 +75,7 @@ export default class BlogPostComponent {
 
   headerService = inject(HeaderService);
 
-  private calculateDescription(): string {
+  private calculatePostDescription = computed(() => {
     const post = this.post();
     if (post == null) {
       return '';
@@ -87,7 +87,7 @@ export default class BlogPostComponent {
     }
 
     return post.attributes.description;
-  }
+  });
 
   private sanitizeContent(content: string): string {
     return content.replace(/<[^>]*>?/gm, '');
@@ -109,10 +109,16 @@ export default class BlogPostComponent {
 
   constructor() {
     effect(() => {
+      const post = this.post();
+      if (post == null) {
+        return;
+      }
+
+      const description = this.calculatePostDescription();
       this.headerService.updateLinkedinShare({
-        title: this.post()?.attributes.title || '',
-        description: this.calculateDescription(),
-        coverImage: this.post()?.attributes.coverImage || '',
+        title: `${post.attributes.title} - ${description}`,
+        description: description,
+        coverImage: post.attributes.coverImage || '',
         url: this.postUrl(),
       });
     });
