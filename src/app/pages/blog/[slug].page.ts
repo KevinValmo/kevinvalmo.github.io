@@ -4,12 +4,19 @@ import { AsyncPipe, DatePipe } from '@angular/common';
 
 import PostAttributes from '../../post-attributes';
 import { NavigatorService } from '../../core/services/navigator.service';
-import TagBadgeComponent from "../../core/components/tag-badge.component";
+import TagBadgeComponent from '../../core/components/tag-badge.component';
+import ShareButtonsComponent from '../../core/components/share-buttons.component';
 
 @Component({
   selector: 'app-blog-post',
   standalone: true,
-  imports: [AsyncPipe, MarkdownComponent, DatePipe, TagBadgeComponent],
+  imports: [
+    AsyncPipe,
+    MarkdownComponent,
+    DatePipe,
+    TagBadgeComponent,
+    ShareButtonsComponent,
+  ],
   template: `
     @if (post$ | async; as post) {
     <article class="max-w-7xl">
@@ -23,15 +30,18 @@ import TagBadgeComponent from "../../core/components/tag-badge.component";
         <div class="italic">{{ post.attributes.description }}</div>
         <div class="flex gap-2 ml-auto mr-0 flex-wrap">
           @for (tag of post.attributes.tags.split(','); track $index) {
-            <kvsrc-tag-badge [tag]="tag" />
+          <kvsrc-tag-badge [tag]="tag" />
           }
         </div>
         <div class="text-gray-600 italic text-right">
           {{ post.attributes.date | date : 'mediumDate' }}
         </div>
       </div>
+
       <div class="divider"></div>
       <analog-markdown class="prose" [content]="post.content" />
+
+      <kvsrc-share-buttons [post]="post" [align]="'left'" />
     </article>
     }
   `,
