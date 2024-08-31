@@ -43,7 +43,7 @@ import { HeaderService } from '../../core/services/header.service';
       <div class="divider"></div>
       <analog-markdown class="prose" [content]="post.content" />
 
-      <kvsrc-share-buttons [url]="postUrl()" [align]="'left'" />
+      <!-- <kvsrc-share-buttons [url]="postUrl()" [align]="'left'" /> -->
     </article>
     }
   `,
