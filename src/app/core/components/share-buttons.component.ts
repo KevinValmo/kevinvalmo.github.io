@@ -47,7 +47,3 @@ export default class ShareButtonsComponent {
     },
   ]);
 }
-
-// https://www.linkedin.com/feed/
-//?shareActive=true
-//&text=Today%20I%20completed%20%22Share%20on%20LinkedIn%20-%20LinkedIn%20%7C%20Microsoft%20Learn%22!%20I%27m%20so%20proud%20to%20be%20celebrating%20this%20achievement%20and%20hope%20this%20inspires%20you%20to%20start%20your%20own%20%40MicrosoftLearn%20journey!%0A%0D%0Ahttps%3A%2F%2Flearn.microsoft.com%2Fen-us%2Flinkedin%2Fconsumer%2Fintegrations%2Fself-serve%2Fshare-on-linkedin%3Fcontext%3Dlinkedin%252Fconsumer%252Fcontext%26WT.mc_id%3Dlinkedin
