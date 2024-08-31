@@ -116,8 +116,8 @@ export default class BlogPostComponent {
 
       const description = this.calculatePostDescription();
       this.headerService.updateLinkedinShare({
-        title: `${post.attributes.title} - ${description}`,
-        description: description,
+        title: `${post.attributes.title} - ${description}...`,
+        description: `${description}...`,
         coverImage: post.attributes.coverImage || '',
         url: this.postUrl(),
       });
