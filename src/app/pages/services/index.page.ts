@@ -52,9 +52,10 @@ export default class ContactComponent {
   constructor() {
     effect(() => {
       this.header.updateLinkedinShare({
-        title: 'Services',
+        title:
+          'Services - I provide top-tier front-end and back-end development services to help you build your dream project.',
         description:
-          'I provide top-tier front-end and back-end development services to help you build your dream project. Contact me to get started! ',
+          'I provide top-tier front-end and back-end development services to help you build your dream project. Contact me to get started!',
         coverImage: 'trees.jpeg',
         url: 'https://kevinvalmo.github.io/services',
       });
