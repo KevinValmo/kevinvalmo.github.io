@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, effect, inject, OnInit } from '@angular/core';
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
@@ -7,6 +7,7 @@ import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
 import ShareButtonsComponent from '../../core/components/share-buttons.component';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { HeaderService } from '../../core/services/header.service';
 
 @Component({
   selector: 'app-blog-post',
@@ -20,12 +21,6 @@ import { toSignal } from '@angular/core/rxjs-interop';
   ],
   template: `
     @if (post$ | async; as post) {
-
-    <meta property="og:title" [content]="post.attributes.title" />
-    <meta property="og:image" [content]="post.attributes.coverImage" />
-    <meta property="og:description" [content]="post.attributes.description" />
-    <meta property="og:url" [content]="postUrl()" />
-
     <article class="max-w-7xl">
       <div
         class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center"
@@ -63,4 +58,17 @@ export default class BlogPostComponent {
   );
 
   readonly navigator = inject(NavigatorService);
+
+  headerService = inject(HeaderService);
+
+  constructor() {
+    effect(() => {
+      this.headerService.updateLinkedinShare({
+        title: this.post()?.attributes.title || '',
+        description: this.post()?.attributes.description || '',
+        coverImage: this.post()?.attributes.coverImage || '',
+        url: this.postUrl(),
+      });
+    });
+  }
 }
