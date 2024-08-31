@@ -67,6 +67,7 @@ export class AppComponent {
   links = signal([
     { name: 'Blog', path: 'blog', icon: '📖' },
     { name: 'About', path: 'about', icon: '🧑‍🦰' },
+    { name: 'Services', path: 'services', icon: '🛠️' },
   ]);
 
   theme = model<'light' | 'dark'>('light');
