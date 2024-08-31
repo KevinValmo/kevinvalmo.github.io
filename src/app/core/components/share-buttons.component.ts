@@ -9,11 +9,6 @@ import PostAttributes from 'src/app/post-attributes';
   selector: 'kvsrc-share-buttons',
   standalone: true,
   template: `
-    <meta property="og:title" [content]="post().attributes.title" />
-    <meta property="og:image" [content]="post().attributes.coverImage" />
-    <meta property="og:description" [content]="post().attributes.description" />
-    <meta property="og:url" [content]="url()" />
-
     <div class="content-center text-xl font-bold mb-2">
       Fell free to share on with your friends! 🚀
     </div>
@@ -37,10 +32,7 @@ import PostAttributes from 'src/app/post-attributes';
   imports: [FontAwesomeModule],
 })
 export default class ShareButtonsComponent {
-  post = input.required<ContentFile<PostAttributes | Record<string, never>>>();
-  url = computed(
-    () => `https://kevinvalmo.github.io/blog/${this.post().attributes.slug}`
-  );
+  url = input.required<string>();
   align = input<'left' | 'right'>('right');
 
   isLeftAligned = computed(() => this.align() === 'left');

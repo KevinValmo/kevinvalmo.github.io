@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
@@ -6,6 +6,7 @@ import PostAttributes from '../../post-attributes';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
 import ShareButtonsComponent from '../../core/components/share-buttons.component';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-blog-post',
@@ -19,6 +20,12 @@ import ShareButtonsComponent from '../../core/components/share-buttons.component
   ],
   template: `
     @if (post$ | async; as post) {
+
+    <meta property="og:title" [content]="post.attributes.title" />
+    <meta property="og:image" [content]="post.attributes.coverImage" />
+    <meta property="og:description" [content]="post.attributes.description" />
+    <meta property="og:url" [content]="postUrl()" />
+
     <article class="max-w-7xl">
       <div
         class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center"
@@ -41,13 +48,19 @@ import ShareButtonsComponent from '../../core/components/share-buttons.component
       <div class="divider"></div>
       <analog-markdown class="prose" [content]="post.content" />
 
-      <kvsrc-share-buttons [post]="post" [align]="'left'" />
+      <kvsrc-share-buttons [url]="postUrl()" [align]="'left'" />
     </article>
     }
   `,
 })
 export default class BlogPostComponent {
   readonly post$ = injectContent<PostAttributes>('slug');
+
+  readonly post = toSignal(this.post$);
+
+  postUrl = computed(
+    () => `https://kevinvalmo.github.io/blog/${this.post()?.attributes.slug}`
+  );
 
   readonly navigator = inject(NavigatorService);
 }
