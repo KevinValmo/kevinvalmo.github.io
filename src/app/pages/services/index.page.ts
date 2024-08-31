@@ -53,7 +53,8 @@ export default class ContactComponent {
     effect(() => {
       this.header.updateLinkedinShare({
         title: 'Services',
-        description: 'Check out our services!',
+        description:
+          'I provide top-tier front-end and back-end development services to help you build your dream project. Contact me to get started! ',
         coverImage: 'trees.jpeg',
         url: 'https://kevinvalmo.github.io/services',
       });
