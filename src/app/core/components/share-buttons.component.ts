@@ -17,7 +17,7 @@ import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
       @for (button of buttons(); track button.name) {
       <a
         class="btn "
-        [href]="button.url"
+        [href]="encodeURI(button.url)"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -29,6 +29,7 @@ import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
   imports: [FontAwesomeModule],
 })
 export default class ShareButtonsComponent {
+  encodeURI = encodeURI;
   url = input.required<string>();
   align = input<'left' | 'right'>('right');
 
@@ -43,7 +44,7 @@ export default class ShareButtonsComponent {
     {
       name: 'LinkedIn',
       icon: faLinkedin,
-      url: `https://www.linkedin.com/feed/?shareArticle=true?&text=${this.message()}${this.url()}`,
+      url: `https://www.linkedin.com/feed/?shareActive=true?&text=${this.message()} ${this.url()}`,
     },
   ]);
 }
