@@ -83,7 +83,7 @@ export default class BlogPostComponent {
 
     if (post.attributes.description.length < 100) {
       const content = post.content?.toString();
-      return this.sanitizeContent(content!).slice(0, 100);
+      return this.sanitizeContent(content!).slice(0, 110);
     }
 
     return post.attributes.description;
