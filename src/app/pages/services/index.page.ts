@@ -17,7 +17,7 @@ import { HeaderService } from '../..//core/services/header.service';
               latest technologies and best practices to create responsive,
               user-friendly, and visually appealing interfaces.
             </p>
-            <p class="flex flex-row gap-4">
+            <p class="flex flex-row gap-4 flex-wrap">
               @for(feTech of feTechs; track feTech) {
               <span class="badge badge-neutral">{{ feTech }}</span>
               }
@@ -32,7 +32,7 @@ import { HeaderService } from '../..//core/services/header.service';
               the latest technologies and industry best practices to deliver
               robust, scalable, and efficient solutions.
             </p>
-            <p class="flex flex-row gap-4">
+            <p class="flex flex-row gap-4 flex-wrap">
               @for(beTech of beTechs; track beTech) {
               <span class="badge badge-neutral">{{ beTech }}</span>
               }

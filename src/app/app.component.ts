@@ -11,9 +11,10 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
     <div
       class="sticky top-0 backdrop-blur-xl bg-base-100/50 py-2 px-8 border-b-2 border-base-300 z-50"
     >
-      <div class="navbar rounded-3xl bg-base-200 py-1 px-4 w-full ">
-        <div class="navbar-start"></div>
-        <div class="navbar-center flex">
+      <div
+        class="flex items-center justify-center flex-wrap rounded-3xl bg-base-200 py-1 px-4 w-full "
+      >
+        <div class=" flex justify-center">
           <ul class="menu menu-horizontal px-1 gap-2">
             @for (link of links(); track link.path) {
             <li>
@@ -25,14 +26,18 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
               </a>
             </li>
             }
+            <li>
+              <label class="swap swap-rotate bg-base-100">
+                <input
+                  type="checkbox"
+                  class="theme-controller"
+                  [(value)]="theme"
+                />
+                <span class="swap-off text-xl">☀️</span>
+                <span class="swap-on text-xl">🌙</span>
+              </label>
+            </li>
           </ul>
-        </div>
-        <div class="navbar-end">
-          <label class="swap swap-rotate">
-            <input type="checkbox" class="theme-controller" [(value)]="theme" />
-            <span class="swap-off text-2xl">☀️</span>
-            <span class="swap-on text-2xl">🌙</span>
-          </label>
         </div>
       </div>
     </div>
