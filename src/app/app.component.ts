@@ -14,8 +14,8 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
       <div
         class="flex items-center justify-center flex-wrap rounded-3xl bg-base-200 py-1 px-4 w-full "
       >
-        <div class=" flex justify-center">
-          <ul class="menu menu-horizontal px-1 gap-2">
+        <div class="flex justify-center">
+          <ul class="menu menu-horizontal px-1 gap-2 flex justify-center">
             @for (link of links(); track link.path) {
             <li>
               <a class="bg-base-100" [routerLink]="link.path">
