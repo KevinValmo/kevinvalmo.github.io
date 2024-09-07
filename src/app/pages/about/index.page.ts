@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
+import { HeaderService } from 'src/app/core/services/header.service';
 
 @Component({
   selector: 'app-about',
@@ -45,4 +46,17 @@ export default class AboutComponent {
     'SQL',
   ];
   protected readonly navigator = inject(NavigatorService);
+
+  private readonly header = inject(HeaderService);
+
+  constructor() {
+    effect(() => {
+      this.header.updateMetaOg({
+        title: `Kevin - I'm a web developer specializing in C#, ASP.NET Core, Typescript, Angular, Azure, Docker, and SQL.`,
+        description: `Kevin - I'm a web developer specializing in C#, ASP.NET Core, Typescript, Angular, Azure, Docker, and SQL.`,
+        coverImage: 'winter_forest_fog.jpg',
+        url: 'https://kevinvalmo.github.io/about',
+      });
+    });
+  }
 }

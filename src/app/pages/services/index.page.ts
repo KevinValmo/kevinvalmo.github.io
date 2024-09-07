@@ -17,9 +17,11 @@ import { HeaderService } from '../..//core/services/header.service';
               latest technologies and best practices to create responsive,
               user-friendly, and visually appealing interfaces.
             </p>
-            <p class="flex flex-row gap-4 flex-wrap">
-              @for(feTech of feTechs; track feTech) {
-              <span class="badge badge-neutral">{{ feTech }}</span>
+            <p class="flex flex-row gap-2 flex-wrap">
+              @for(tech of feTechs; track tech) {
+              <span class="badge badge-neutral rounded-xl p-4">
+                {{ tech }}
+              </span>
               }
             </p>
           </div>
@@ -33,8 +35,10 @@ import { HeaderService } from '../..//core/services/header.service';
               robust, scalable, and efficient solutions.
             </p>
             <p class="flex flex-row gap-4 flex-wrap">
-              @for(beTech of beTechs; track beTech) {
-              <span class="badge badge-neutral">{{ beTech }}</span>
+              @for(tech of beTechs; track tech) {
+              <span class="badge badge-neutral rounded-xl p-4">
+                {{ tech }}
+              </span>
               }
             </p>
           </div>
@@ -51,7 +55,7 @@ export default class ContactComponent {
   header = inject(HeaderService);
   constructor() {
     effect(() => {
-      this.header.updateLinkedinShare({
+      this.header.updateMetaOg({
         title:
           'Services - I provide top-tier front-end and back-end development services to help you build your dream project.',
         description:

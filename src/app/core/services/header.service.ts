@@ -20,7 +20,7 @@ export class HeaderService {
     }
   }
 
-  updateLinkedinShare({
+  updateMetaOg({
     title,
     description,
     coverImage,

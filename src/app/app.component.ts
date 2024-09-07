@@ -45,7 +45,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
       <router-outlet></router-outlet>
     </div>
     <footer class="footer footer-center bg-base-300 text-base-content p-4 ">
-      <aside class="w-full flex justify-between">
+      <aside class="w-full flex justify-between flex-wrap">
         <div>Kevin Valmorbida - A Web Developer</div>
         <div class="flex gap-4">
           <a

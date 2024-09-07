@@ -115,7 +115,7 @@ export default class BlogPostComponent {
       }
 
       const description = this.calculatePostDescription();
-      this.headerService.updateLinkedinShare({
+      this.headerService.updateMetaOg({
         title: `${post.attributes.title} - ${description}...`,
         description: `${description}...`,
         coverImage: post.attributes.coverImage || '',
