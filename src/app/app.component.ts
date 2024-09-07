@@ -10,7 +10,7 @@ import { Themes, ToolbarLink } from './types';
   imports: [RouterOutlet, RouterLink, FontAwesomeModule],
   template: `
     <div
-      class="sticky top-0 backdrop-blur-xl bg-base-100/50 py-2 px-8 border-b-2 border-base-300 z-50"
+      class="sticky top-0 backdrop-blur-xl bg-base-100/50 py-2 px-4 border-b-2 border-base-300 z-50"
     >
       <div
         class="flex items-center justify-center flex-wrap rounded-3xl bg-base-200 py-1 px-4 w-full "
