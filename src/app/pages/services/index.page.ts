@@ -9,7 +9,7 @@ import { HeaderService } from '../..//core/services/header.service';
   template: `
     <div class="flex flex-col items-center justify-center max-w-7xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-        <div class="card shadow-lg bg-base-200">
+        <div class="card bg-base-200">
           <div class="card-body">
             <h2 class="card-title">Front-End Development 🚀</h2>
             <p>
@@ -26,7 +26,7 @@ import { HeaderService } from '../..//core/services/header.service';
             </p>
           </div>
         </div>
-        <div class="card shadow-lg bg-base-200">
+        <div class="card bg-base-200">
           <div class="card-body">
             <h2 class="card-title">Back-End Development 🛠️</h2>
             <p>
@@ -34,7 +34,7 @@ import { HeaderService } from '../..//core/services/header.service';
               the latest technologies and industry best practices to deliver
               robust, scalable, and efficient solutions.
             </p>
-            <p class="flex flex-row gap-4 flex-wrap">
+            <p class="flex flex-row gap-2 flex-wrap">
               @for(tech of beTechs; track tech) {
               <span class="badge badge-neutral rounded-xl p-4">
                 {{ tech }}
