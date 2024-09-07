@@ -1,7 +1,7 @@
 import { Component, effect, inject } from '@angular/core';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
-import { HeaderService } from 'src/app/core/services/header.service';
+import { HeaderService } from '../../core/services/header.service';
 
 @Component({
   selector: 'app-about',

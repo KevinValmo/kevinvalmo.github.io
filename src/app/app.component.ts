@@ -2,6 +2,7 @@ import { Component, model, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Themes, ToolbarLink } from './types';
 
 @Component({
   selector: 'app-root',
@@ -69,11 +70,11 @@ export class AppComponent {
   protected readonly linkeinIcon = faLinkedin;
   protected readonly githubIcon = faGithub;
 
-  links = signal([
+  links = signal<ToolbarLink[]>([
     { name: 'Blog', path: 'blog', icon: '📖' },
     { name: 'About', path: 'about', icon: '🧑‍🦰' },
     { name: 'Services', path: 'services', icon: '🛠️' },
   ]);
 
-  theme = model<'light' | 'dark'>('light');
+  theme = model<Themes>('light');
 }

@@ -2,7 +2,6 @@ import { Component, computed, effect, inject, OnInit } from '@angular/core';
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
-import PostAttributes from '../../post-attributes';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
 import ShareButtonsComponent from '../../core/components/share-buttons.component';
@@ -10,6 +9,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { HeaderService } from '../../core/services/header.service';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PostAttributes } from '../../types';
 
 @Component({
   selector: 'app-blog-post',

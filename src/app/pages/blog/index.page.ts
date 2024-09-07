@@ -1,12 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { injectContentFiles } from '@analogjs/content';
-import PostAttributes from '../../post-attributes';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { map } from 'rxjs';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
+import { PostAttributes } from '../../types';
 
 @Component({
   selector: 'app-blog',

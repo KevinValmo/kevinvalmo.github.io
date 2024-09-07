@@ -1,6 +1,7 @@
 import { Component, computed, input, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { Alignment } from '../../types';
 
 @Component({
   selector: 'kvsrc-share-buttons',
@@ -31,7 +32,7 @@ import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 export default class ShareButtonsComponent {
   encodeURI = encodeURI;
   url = input.required<string>();
-  align = input<'left' | 'right'>('right');
+  align = input<Alignment>('right');
 
   isLeftAligned = computed(() => this.align() === 'left');
   isRightAligned = computed(() => this.align() === 'right');

@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { inject, Injectable } from '@angular/core';
+import { OgMeta } from '../../types';
 
 @Injectable({
   providedIn: 'root',
@@ -20,26 +21,16 @@ export class HeaderService {
     }
   }
 
-  updateMetaOg({
-    title,
-    description,
-    coverImage,
-    url,
-  }: {
-    title: string;
-    description: string;
-    coverImage: string;
-    url: string;
-  }): void {
-    this.addUpdateHeader('ogtitle', title);
+  updateMetaOg(ogMeta: OgMeta): void {
+    this.addUpdateHeader('ogtitle', ogMeta.title);
 
-    this.addUpdateHeader('ogdescription', description);
+    this.addUpdateHeader('ogdescription', ogMeta.description);
 
     this.addUpdateHeader(
       'ogimage',
-      `https://kevinvalmo.github.io/${coverImage}`
+      `https://kevinvalmo.github.io/${ogMeta.coverImage}`
     );
 
-    this.addUpdateHeader('ogurl', url);
+    this.addUpdateHeader('ogurl', ogMeta.url);
   }
 }
