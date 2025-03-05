@@ -73,6 +73,7 @@ export class AppComponent {
   links = signal<ToolbarLink[]>([
     { name: 'Blog', path: 'blog', icon: '📖' },
     { name: 'About', path: 'about', icon: '🧑‍🦰' },
+    // { name: 'Cv', path: 'cv', icon: '📄' },
     { name: 'Services', path: 'services', icon: '🛠️' },
   ]);
 

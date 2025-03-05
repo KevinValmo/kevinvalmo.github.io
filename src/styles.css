@@ -8,6 +8,11 @@
   @apply rounded-2xl;
 }
 
-analog-markdown a {
-  @apply text-pink-700 !important;
+analog-markdown a,
+app-cv a {
+  @apply italic underline text-pink-700 !important;
+}
+
+.text-hl {
+  @apply text-primary;
 }
