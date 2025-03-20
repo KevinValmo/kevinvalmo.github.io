@@ -3,9 +3,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
-  selector: 'app-footer',
-  standalone: true,
-  template: `
+    selector: 'app-footer',
+    template: `
     <footer class="footer footer-center bg-base-300 text-base-content p-4 ">
       <aside class="w-full flex justify-between flex-wrap">
         <div>Kevin Valmorbida - A Web Developer</div>
@@ -26,7 +25,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
       </aside>
     </footer>
   `,
-  imports: [FontAwesomeModule],
+    imports: [FontAwesomeModule]
 })
 export class FooterComponent {
   protected readonly linkeinIcon = faLinkedin;

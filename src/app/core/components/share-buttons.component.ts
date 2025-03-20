@@ -4,9 +4,8 @@ import { faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Alignment } from '../../types';
 
 @Component({
-  selector: 'kvsrc-share-buttons',
-  standalone: true,
-  template: `
+    selector: 'kvsrc-share-buttons',
+    template: `
     <div class="content-center text-xl font-bold mb-2">
       Fell free to share on with your friends! 🚀
     </div>
@@ -27,7 +26,7 @@ import { Alignment } from '../../types';
       }
     </div>
   `,
-  imports: [FontAwesomeModule],
+    imports: [FontAwesomeModule]
 })
 export default class ShareButtonsComponent {
   encodeURI = encodeURI;

@@ -3,9 +3,8 @@ import { RouterLink } from '@angular/router';
 import { Themes, ToolbarLink } from 'src/app/types';
 
 @Component({
-  selector: 'app-headers',
-  standalone: true,
-  template: `
+    selector: 'app-headers',
+    template: `
     <div
       class="sticky top-0 backdrop-blur-xl bg-base-100/50 py-2 px-4 border-b-2 border-base-300 z-50"
     >
@@ -40,7 +39,7 @@ import { Themes, ToolbarLink } from 'src/app/types';
       </div>
     </div>
   `,
-  imports: [RouterLink],
+    imports: [RouterLink]
 })
 export class HeadersComponent {
   links = signal<ToolbarLink[]>([

@@ -9,10 +9,9 @@ import TagBadgeComponent from '../../core/components/tag-badge.component';
 import { PostAttributes } from '../../types';
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [RouterLink, DatePipe, TagBadgeComponent],
-  template: `
+    selector: 'app-blog',
+    imports: [RouterLink, DatePipe, TagBadgeComponent],
+    template: `
     <div class="flex flex-wrap gap-4 justify-center">
       @for (post of posts(); track post.attributes.slug) {
       <div
@@ -38,7 +37,7 @@ import { PostAttributes } from '../../types';
       </div>
       }
     </div>
-  `,
+  `
 })
 export default class BlogComponent {
   private readonly route = inject(ActivatedRoute);

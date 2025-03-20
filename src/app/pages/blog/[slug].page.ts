@@ -12,17 +12,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostAttributes } from '../../types';
 
 @Component({
-  selector: 'app-blog-post',
-  standalone: true,
-  imports: [
-    AsyncPipe,
-    MarkdownComponent,
-    DatePipe,
-    TagBadgeComponent,
-    ShareButtonsComponent,
-    FontAwesomeModule,
-  ],
-  template: `
+    selector: 'app-blog-post',
+    imports: [
+        AsyncPipe,
+        MarkdownComponent,
+        DatePipe,
+        TagBadgeComponent,
+        ShareButtonsComponent,
+        FontAwesomeModule,
+    ],
+    template: `
     @let localPost = post(); @if (localPost) {
     <article class="max-w-7xl">
       <div
@@ -59,7 +58,7 @@ import { PostAttributes } from '../../types';
       />
     </div>
     }
-  `,
+  `
 })
 export default class BlogPostComponent {
   readonly post$ = injectContent<PostAttributes>('slug');

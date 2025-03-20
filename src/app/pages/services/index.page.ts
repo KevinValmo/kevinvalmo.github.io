@@ -4,9 +4,8 @@ import TagBadgeComponent from '../../core/components/tag-badge.component';
 import { HeaderService } from '../..//core/services/header.service';
 
 @Component({
-  selector: 'app-services',
-  standalone: true,
-  template: `
+    selector: 'app-services',
+    template: `
     <div class="flex flex-col items-center justify-center max-w-7xl">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
         <div class="card bg-base-200">
@@ -46,7 +45,7 @@ import { HeaderService } from '../..//core/services/header.service';
       </div>
     </div>
   `,
-  imports: [FontAwesomeModule, TagBadgeComponent],
+    imports: [FontAwesomeModule, TagBadgeComponent]
 })
 export default class ContactComponent {
   feTechs = ['Html', 'CSS', 'Typescript', 'Angular'];

@@ -4,9 +4,8 @@ import TagBadgeComponent from '../../core/components/tag-badge.component';
 import { HeaderService } from '../../core/services/header.service';
 
 @Component({
-  selector: 'app-about',
-  standalone: true,
-  template: `
+    selector: 'app-about',
+    template: `
     <div class="ml-auto mr-auto max-w-3xl">
       <div>
         <h2 class="text-2xl font-semibold mt-4">
@@ -33,7 +32,7 @@ import { HeaderService } from '../../core/services/header.service';
       </div>
     </div>
   `,
-  imports: [TagBadgeComponent],
+    imports: [TagBadgeComponent]
 })
 export default class AboutComponent {
   protected readonly technologies = [
