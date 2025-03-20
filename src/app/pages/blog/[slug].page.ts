@@ -54,7 +54,7 @@ import { PostAttributes } from '../../types';
     <div class="flex justify-center items-center h-96">
       <fa-icon
         [icon]="spinnerIcon"
-        class="text-4xl text-primary animate-spin"
+        class="text-4xl animate-spin"
       />
     </div>
     }
