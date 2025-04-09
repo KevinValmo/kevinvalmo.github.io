@@ -12,3 +12,8 @@ analog-markdown a,
 app-cv a {
   @apply italic underline text-pink-700 !important;
 }
+
+analog-markdown p > strong,
+li > strong {
+  @apply italic !important;
+}

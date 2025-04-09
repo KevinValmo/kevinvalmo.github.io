@@ -10,25 +10,33 @@ import { HeaderService } from '../../core/services/header.service';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostAttributes } from '../../types';
+import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-blog-post',
-    imports: [
-        AsyncPipe,
-        MarkdownComponent,
-        DatePipe,
-        TagBadgeComponent,
-        ShareButtonsComponent,
-        FontAwesomeModule,
-    ],
-    template: `
+  selector: 'app-blog-post',
+  imports: [
+    MarkdownComponent,
+    DatePipe,
+    TagBadgeComponent,
+    ShareButtonsComponent,
+    FontAwesomeModule,
+  ],
+  template: `
     @let localPost = post(); @if (localPost) {
-    <article class="max-w-7xl">
+    <article class="max-w-4xl">
       <div
-        class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center"
+        class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center flex items-end p-4 justify-end"
         style="background-image: url('/{{ localPost.attributes.coverImage }}')"
-      ></div>
-
+      >
+        <div
+          class="bg-base-100/50 backdrop-blur-sm rounded-2xl text-white px-4 py-2 text-sm font-semibold"
+        >
+          {{
+            localPost.attributes.coverImageTitle ||
+              localPost.attributes.coverImage
+          }}
+        </div>
+      </div>
       <div class="flex flex-col gap-2 ">
         <div class="text-4xl font-bold">{{ localPost.attributes.title }}</div>
         <div class="italic">{{ localPost.attributes.description }}</div>
@@ -44,21 +52,17 @@ import { PostAttributes } from '../../types';
           {{ localPost.attributes.date | date : 'mediumDate' }}
         </div>
       </div>
-
       <div class="divider"></div>
       <analog-markdown class="prose" [content]="localPost.content" />
-
+      <div class="divider"></div>
       <kvsrc-share-buttons [url]="postUrl()" [align]="'left'" />
     </article>
     } @else {
     <div class="flex justify-center items-center h-96">
-      <fa-icon
-        [icon]="spinnerIcon"
-        class="text-4xl animate-spin"
-      />
+      <fa-icon [icon]="spinnerIcon" class="text-4xl animate-spin" />
     </div>
     }
-  `
+  `,
 })
 export default class BlogPostComponent {
   readonly post$ = injectContent<PostAttributes>('slug');

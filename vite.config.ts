@@ -17,7 +17,14 @@ export default defineConfig(({ mode }) => ({
         highlighter: 'shiki',
       },
       prerender: {
-        routes: ['/about', '/blog', '/services', '/cv', '/blog/my-first-post'],
+        routes: [
+          '/about',
+          '/blog',
+          '/services',
+          '/cv',
+          '/blog/my-first-post',
+          '/blog/blog/my-first-post',
+        ],
       },
     }),
   ],

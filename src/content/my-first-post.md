@@ -4,7 +4,7 @@ slug: my-first-post
 date: 2024-08-26
 description: My first blog post on my new blog, powered by Analog, the Angular meta-framework.
 coverImage: forest_fog.jpg
-tags: C#, TypeScript, Angular, UI Library, TailwindCSS
+tags: c#, typescript, angular, ui-library, tailwindcss
 ---
 
 ## Long Time No See
