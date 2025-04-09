@@ -22,15 +22,15 @@ export class HeaderService {
   }
 
   updateMetaOg(ogMeta: OgMeta): void {
-    this.addUpdateHeader('ogtitle', ogMeta.title);
+    this.addUpdateHeader('og:title', ogMeta.title);
 
-    this.addUpdateHeader('ogdescription', ogMeta.description);
+    this.addUpdateHeader('og:description', ogMeta.description);
 
     this.addUpdateHeader(
-      'ogimage',
+      'og:image',
       `https://kevinvalmo.github.io/${ogMeta.coverImage}`
     );
 
-    this.addUpdateHeader('ogurl', ogMeta.url);
+    this.addUpdateHeader('og:url', ogMeta.url);
   }
 }
