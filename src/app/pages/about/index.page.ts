@@ -11,13 +11,13 @@ import { HeaderService } from '../../core/services/header.service';
         <h2 class="text-2xl font-semibold mt-4">
           Kevin
           <span class="text-gray-600 mt-2 text-sm align-middle"
-            >- A Web Developer</span
+            >- Software Engineer</span
           >
         </h2>
       </div>
 
       <div class="mt-6 flex flex-col gap-2">
-        <div>I'm a web developer.</div>
+        <div>I'm a software engineer.</div>
         <div>
           Below please find a list of technologies I've been working with
           lately. Just click on the badges to see if I've written any posts
@@ -51,8 +51,8 @@ export default class AboutComponent {
   constructor() {
     effect(() => {
       this.header.updateMetaOg({
-        title: `Kevin - I'm a web developer specializing in C#, ASP.NET Core, Typescript, Angular, Azure, Docker, and SQL.`,
-        description: `Kevin - I'm a web developer specializing in C#, ASP.NET Core, Typescript, Angular, Azure, Docker, and SQL.`,
+        title: `Kevin - I'm a software engineer specializing in C#, ASP.NET Core, Typescript, Angular, Azure, Docker, and SQL.`,
+        description: `Kevin - I'm a software engineer specializing in C#, ASP.NET Core, Typescript, Angular, Azure, Docker, and SQL.`,
         coverImage: 'winter_forest_fog.jpg',
         url: 'https://kevinvalmo.github.io/about',
       });

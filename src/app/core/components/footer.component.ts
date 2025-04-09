@@ -7,7 +7,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
     template: `
     <footer class="footer footer-center bg-base-300 text-base-content p-4 ">
       <aside class="w-full flex justify-between flex-wrap">
-        <div>Kevin Valmorbida - A Web Developer</div>
+        <div>Kevin Valmorbida - Software Engineer</div>
         <div class="flex gap-4">
           <a
             href="https://www.linkedin.com/in/kevinvalmorbida/"
