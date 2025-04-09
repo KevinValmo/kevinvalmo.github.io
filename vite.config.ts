@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
           '/services',
           '/cv',
           '/blog/my-first-post',
-          '/blog/blog/my-first-post',
+          '/blog/enhanced-software-engineers',
         ],
       },
     }),
