@@ -84,16 +84,26 @@ export default class BlogPostComponent {
       return '';
     }
 
-    if (post.attributes.description.length < 100) {
-      const content = post.content?.toString();
-      return this.sanitizeContent(content!).slice(0, 110);
+    let description = post.attributes.description;
+    const content = post.content?.toString();
+
+    const missingLength = 150 - description.length;
+    if (missingLength > 0 && content != null) {
+      const sanitizedContent = this.sanitizeContent(content!);
+      const words = sanitizedContent.slice(0, missingLength);
+      description += ` ${words}...`;
     }
 
-    return post.attributes.description;
+    return description;
   });
 
   private sanitizeContent(content: string): string {
-    return content.replace(/<[^>]*>?/gm, '');
+    // remove new lines and extra spaces
+    content = content.replace(/\s+/g, ' ').trim();
+    // remove HTML tags
+    content = content.replace(/<[^>]*>?/gm, '');
+
+    return content;
   }
 
   readTime = computed(() => {
