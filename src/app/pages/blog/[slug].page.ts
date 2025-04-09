@@ -91,7 +91,7 @@ export default class BlogPostComponent {
     if (missingLength > 0 && content != null) {
       const sanitizedContent = this.sanitizeContent(content!);
       const words = sanitizedContent.slice(0, missingLength);
-      description += ` ${words}...`;
+      description += ` ${words}`;
     }
 
     return description;
