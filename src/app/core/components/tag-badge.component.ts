@@ -6,9 +6,7 @@ import { NavigatorService } from '../services/navigator.service';
   standalone: true,
   template: `
     <div
-      class="py-3 hover:cursor-pointer hover:badge-accent transition-all duration-300 badge badge-neutral"
-      title="Click to see posts about {{ tag() }} 🏷️"
-      (click)="navigator.navigateToBlogPostByTag($event, tag())"
+      class="py-3 hover:badge-accent transition-all duration-300 badge badge-neutral"
     >
       {{ tag() }}
     </div>
@@ -16,5 +14,4 @@ import { NavigatorService } from '../services/navigator.service';
 })
 export default class TagBadgeComponent {
   tag = input.required<string>();
-  navigator = inject(NavigatorService);
 }

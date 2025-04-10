@@ -22,8 +22,7 @@ import { TitleComponent } from '../../core/components/title.component';
         <div>I'm a software engineer.</div>
         <div>
           Below please find a list of technologies I've been working with
-          lately. Just click on the badges to see if I've written any posts
-          about them.
+          lately.
           <div class="divider"></div>
           <div class="flex gap-2 mt-2 flex-wrap">
             @for (technology of technologies; track $index) {
