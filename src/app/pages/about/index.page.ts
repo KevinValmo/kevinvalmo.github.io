@@ -2,10 +2,12 @@ import { Component, effect, inject } from '@angular/core';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
 import { HeaderService } from '../../core/services/header.service';
+import { TitleComponent } from '../../core/components/title.component';
 
 @Component({
-    selector: 'app-about',
-    template: `
+  selector: 'app-about',
+  template: `
+    <app-title title="About" />
     <div class="ml-auto mr-auto max-w-3xl">
       <div>
         <h2 class="text-2xl font-semibold mt-4">
@@ -32,7 +34,7 @@ import { HeaderService } from '../../core/services/header.service';
       </div>
     </div>
   `,
-    imports: [TagBadgeComponent]
+  imports: [TagBadgeComponent, TitleComponent],
 })
 export default class AboutComponent {
   protected readonly technologies = [

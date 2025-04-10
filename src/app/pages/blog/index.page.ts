@@ -7,11 +7,13 @@ import { map } from 'rxjs';
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
 import { PostAttributes } from '../../types';
+import { TitleComponent } from '../../core/components/title.component';
 
 @Component({
-    selector: 'app-blog',
-    imports: [RouterLink, DatePipe, TagBadgeComponent],
-    template: `
+  selector: 'app-blog',
+  imports: [RouterLink, DatePipe, TagBadgeComponent, TitleComponent],
+  template: `
+    <app-title title="Blog" />
     <div class="flex flex-wrap gap-4 justify-center">
       @for (post of posts(); track post.attributes.slug) {
       <div
@@ -37,7 +39,7 @@ import { PostAttributes } from '../../types';
       </div>
       }
     </div>
-  `
+  `,
 })
 export default class BlogComponent {
   private readonly route = inject(ActivatedRoute);

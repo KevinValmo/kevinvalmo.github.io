@@ -46,7 +46,7 @@ export class HeadersComponent {
     { name: 'Blog', path: 'blog', icon: '📖' },
     { name: 'About', path: 'about', icon: '🧑‍🦰' },
     // { name: 'Cv', path: 'cv', icon: '📄' },
-    { name: 'Services', path: 'services', icon: '🛠️' },
+    // { name: 'Services', path: 'services', icon: '🛠️' },
   ]);
 
   theme = model<Themes>('light');

@@ -6,15 +6,17 @@ import { HeadersComponent } from './core/components/headers.component';
 import { FooterComponent } from './core/components/footer.component';
 
 @Component({
-    selector: 'app-root',
-    imports: [RouterOutlet, FontAwesomeModule, HeadersComponent, FooterComponent],
-    template: `
+  selector: 'app-root',
+  imports: [RouterOutlet, FontAwesomeModule, HeadersComponent, FooterComponent],
+  template: `
     <app-headers />
-    <div class="flex mt-4 justify-center p-4 ">
+    <div
+      class="flex mt-4 justify-center p-4 max-w-4xl justify-self-center"
+    >
       <router-outlet></router-outlet>
     </div>
     <app-footer />
-  `
+  `,
 })
 export class AppComponent {
   protected readonly linkeinIcon = faLinkedin;

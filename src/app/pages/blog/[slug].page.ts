@@ -23,7 +23,7 @@ import { RouterLink } from '@angular/router';
   ],
   template: `
     @let localPost = post(); @if (localPost) {
-    <article class="max-w-4xl">
+    <article>
       <div
         class="rounded-3xl mb-4 w-full h-96 bg-cover bg-center flex items-end p-4 justify-end"
         style="background-image: url('/{{ localPost.attributes.coverImage }}')"
