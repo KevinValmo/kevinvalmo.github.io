@@ -3,8 +3,8 @@ title: Enhanced Software Engineers
 slug: enhanced-software-engineers
 date: 2025-04-09
 description: We are living in a world where enanchment applies to our work.
-coverImage: malga-campogrosso.jpg
-coverImageTitle: Malga Campogrosso - Kevin Valmorbida
+coverImage: rifugio-campogrosso.jpg.jpg
+coverImageTitle: Rifugio Campogrosso - Kevin Valmorbida
 tags: software-engineering, life, work
 ---
 
