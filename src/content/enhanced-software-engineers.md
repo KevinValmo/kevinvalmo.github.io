@@ -4,6 +4,7 @@ slug: enhanced-software-engineers
 date: 2025-04-09
 description: We are living in a world where enanchment applies to our work.
 coverImage: rifugio-campogrosso.jpg
+coverImageLow: rifugio-campogrosso.low.jpg
 coverImageTitle: Rifugio Campogrosso - Kevin Valmorbida
 tags: software-engineering, life, work
 ---

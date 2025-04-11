@@ -3,6 +3,7 @@ export type PostAttributes = {
   slug: string;
   description: string;
   coverImage: string;
+  coverImageLow: string;
   coverImageTitle?: string;
   tags: string;
   date: string;

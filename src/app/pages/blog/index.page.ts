@@ -22,8 +22,8 @@ import { TitleComponent } from '../../core/components/title.component';
         [routerLink]="['/blog/', post.attributes.slug]"
       >
         <img
-          class="p-2 w-48 object-cover aspect-video rounded-3xl "
-          [src]="post.attributes.coverImage"
+          class="p-2 min-w-48 w-48 max-w-48 object-cover aspect-video rounded-3xl "
+          [src]="post.attributes.coverImageLow"
         />
         <div class="card-body py-1 pl-4 pr-0 overflow-auto">
           <div

@@ -4,6 +4,7 @@ slug: my-first-post
 date: 2024-08-26
 description: My first blog post on my new blog, powered by Analog, the Angular meta-framework.
 coverImage: ponale-garda-lake.jpg
+coverImageLow: ponale-garda-lake.low.jpg
 coverImageTitle: Ponale, Garda Lake - Kevin Valmorbida
 tags: c#, typescript, angular, ui-library, tailwindcss
 ---
