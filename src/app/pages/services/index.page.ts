@@ -6,6 +6,7 @@ import { TitleComponent } from '../../core/components/title.component';
 
 @Component({
   selector: 'app-services',
+  host: { class: 'w-full' },
   template: `
     <app-title title="Services" />
     <div class="mt-6 flex flex-col gap-2">

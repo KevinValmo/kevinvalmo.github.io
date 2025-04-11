@@ -1,6 +1,6 @@
-import { Component, computed, effect, inject, OnInit } from '@angular/core';
+import { Component, computed, effect, inject } from '@angular/core';
 import { injectContent, MarkdownComponent } from '@analogjs/content';
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 import { NavigatorService } from '../../core/services/navigator.service';
 import TagBadgeComponent from '../../core/components/tag-badge.component';
@@ -10,10 +10,10 @@ import { HeaderService } from '../../core/services/header.service';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PostAttributes } from '../../types';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-blog-post',
+  host: { class: 'w-full' },
   imports: [
     MarkdownComponent,
     DatePipe,

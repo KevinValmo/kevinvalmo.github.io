@@ -6,30 +6,31 @@ import { TitleComponent } from '../../core/components/title.component';
 
 @Component({
   selector: 'app-about',
+  host: { class: 'w-full' },
   template: `
     <app-title title="About" />
-    <div class="ml-auto mr-auto max-w-3xl">
-      <div>
-        <h2 class="text-2xl font-semibold mt-4">
-          Kevin
-          <span class="text-gray-600 mt-2 text-sm align-middle"
-            >- Software Engineer</span
-          >
-        </h2>
-      </div>
-
-      <div class="mt-6 flex flex-col gap-2">
-        <div>I'm a software engineer.</div>
-        <div>
-          Below please find a list of technologies I've been working with
-          lately.
-          <div class="divider"></div>
-          <div class="flex gap-2 mt-2 flex-wrap">
-            @for (technology of technologies; track $index) {
-            <kvsrc-tag-badge [tag]="technology" />
-            }
-          </div>
-        </div>
+    <div>
+      <h2 class="text-2xl font-semibold mt-4">
+        Kevin Valmorbida
+        <span class="text-gray-600 mt-2 text-sm align-middle">
+          - Software Engineer
+        </span>
+      </h2>
+    </div>
+    <p class="mt-4">
+      Full Stack Software Developer with solid experience in .NET, C#, Angular,
+      TypeScript, SQL, and real-time integrations, driven by a strong passion
+      for continuous learning. Proficient in software architecture,
+      problem-solving, and creating custom solutions. Skilled in consulting, and
+      project management to achieve objectives.
+    </p>
+    <div class="divider"></div>
+    <div class="flex flex-col sm:flex-row gap-2">
+      <div class="italic align-middle">Tech stack I work with:</div>
+      <div class="flex gap-2 flex-wrap align-middle flex-1 sm:justify-end">
+        @for (technology of technologies; track $index) {
+        <kvsrc-tag-badge [tag]="technology" />
+        }
       </div>
     </div>
   `,

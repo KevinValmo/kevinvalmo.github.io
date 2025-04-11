@@ -11,7 +11,7 @@ import { FooterComponent } from './core/components/footer.component';
   template: `
     <app-headers />
     <div
-      class="flex mt-4 justify-center p-4 max-w-4xl justify-self-center"
+      class="flex mt-4 justify-center p-4 max-w-3xl justify-self-center"
     >
       <router-outlet></router-outlet>
     </div>
