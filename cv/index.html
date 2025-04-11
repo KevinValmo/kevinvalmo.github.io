@@ -1,0 +1,593 @@
+<!DOCTYPE html><html lang="en" data-theme=""><head>
+    <meta charset="utf-8">
+    <title>Kevin</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="ogtitle" property="og:title">
+    <meta name="ogimage" property="og:image">
+    <meta name="ogdescription" property="og:description">
+    <meta name="ogurl" property="og:url">
+    <meta name="author" property="author" content="Kevin">
+
+    <style type="text/css" id="fa-auto-css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 6 Sharp Duotone";
+  --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 6 Sharp Duotone";
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 6 Sharp Duotone";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    animation-delay: -1ms;
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}</style><link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      })(window.location);
+    </script>
+    <script type="module" crossorigin="" src="/assets/index-DLcwJvLs.js"></script>
+    <link rel="stylesheet" crossorigin="" href="/assets/index-Bfzjrt6D.css">
+  </head>
+  <body><!--nghm-->
+    <app-root ng-version="19.2.3" ngh="3" ng-server-context="ssr-analog"><app-headers ngh="0"><div class="sticky top-0 backdrop-blur-xl bg-base-100/50 py-2 px-4 border-b-2 border-base-300 z-50"><div class="flex items-center justify-center flex-wrap rounded-3xl bg-base-200 py-1 px-4 w-full"><div class="flex justify-center"><ul class="menu menu-horizontal px-1 gap-2 flex justify-center"><li><a class="bg-base-100" href="/blog"> Blog <span class="text-xl align-middle"> 📖 </span></a></li><li><a class="bg-base-100" href="/about"> About <span class="text-xl align-middle"> 🧑‍🦰 </span></a></li><!----><li><label class="swap swap-rotate bg-base-100"><input type="checkbox" class="theme-controller" value="light"><span class="swap-off text-xl">☀️</span><span class="swap-on text-xl">🌙</span></label></li></ul></div></div></div></app-headers><div class="flex mt-4 justify-center p-4 max-w-3xl justify-self-center"><router-outlet></router-outlet><app-cv class="w-full" ngh="1"><div class="flex flex-col items-center"><div class="text-3xl font-bold mt-4"> Kevin Valmorbida <span class="text-gray-600 font-normal"> - Full Stack Software Engineer </span></div><div class="w-full text-sm mt-2 text-yellow-500 italic text-right"> Updated at 2024/09/10 </div></div><div class="mt-6 flex flex-col gap-2 text-justify"><div><div class="text-2xl font-bold border-b-4 border-base-300"> Career Objective </div><div class="mt-2"> To leverage my skills as a <label class="text-hl">full-stack software engineer</label>, with a focus on <label class="text-hl">team management</label>, problem-solving, and delivering high-quality solutions on time. </div></div><div><div class="text-2xl font-bold border-b-4 border-base-300">About</div><div class="mt-2"> I'm a skilled Software Engineer with 5+ years of experience in <label class="text-hl">back-end</label> and <label class="text-hl">front-end development</label>, specializing in <label class="text-hl">SQL databases</label> and <label class="text-hl">real-time data integration</label>. I have a label grasp of <label class="text-hl">software architecture</label> and the <label class="text-hl">software life cycle</label>. My communication skills help me engage with clients and manage projects effectively. I also write knowledge posts on my tech stack (C#, .NET, TypeScript, Angular) on <label class="text-hl">LinkedIn</label>, growing a community of <label class="text-hl">2.5k+ followers</label> ( <a href="https://www.linkedin.com/in/kevinvalmorbida/"> follow me 😜 </a> ). </div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"><div><div class="text-2xl font-bold border-b-4 border-base-300"> Education </div><div class="mt-2"> 2007 - 2013 - Diploma <br> I.T.I.S. V.E.M (Technical) </div></div><div><div class="text-2xl font-bold border-b-4 border-base-300"> Language </div><div class="mt-2"> Italian - Native <br> English - B2 </div></div><div><div class="text-2xl font-bold border-b-4 border-base-300"> Major Skills </div><div class="mt-2 flex flex-wrap gap-2"><span class="badge badge-neutral">C#</span><span class="badge badge-neutral">.NET</span><span class="badge badge-neutral">Blazor</span><span class="badge badge-neutral">TypeScript</span><span class="badge badge-neutral">Angular</span><span class="badge badge-neutral">Azure</span><!----></div></div><div><div class="text-2xl font-bold border-b-4 border-base-300"> Skills </div><div class="mt-2 flex flex-wrap gap-2 max-h-24 overflow-y-auto"><span class="badge badge-neutral text-nowrap">.Net 8</span><span class="badge badge-neutral text-nowrap">.Net Core</span><span class="badge badge-neutral text-nowrap">.Net WinForms</span><span class="badge badge-neutral text-nowrap">Entity Framework Core</span><span class="badge badge-neutral text-nowrap">SignalR</span><span class="badge badge-neutral text-nowrap">Javascript</span><span class="badge badge-neutral text-nowrap">Angular 18</span><span class="badge badge-neutral text-nowrap">HTML</span><span class="badge badge-neutral text-nowrap">CSS</span><span class="badge badge-neutral text-nowrap">Tailwind</span><span class="badge badge-neutral text-nowrap">SQL</span><span class="badge badge-neutral text-nowrap">Git</span><span class="badge badge-neutral text-nowrap">GitHub</span><span class="badge badge-neutral text-nowrap">Rest API</span><span class="badge badge-neutral text-nowrap">JSON</span><span class="badge badge-neutral text-nowrap">MQTT</span><span class="badge badge-neutral text-nowrap">Azure</span><!----></div></div></div><div><div class="text-3xl font-bold border-b-4 border-base-300 text-hl"> Experience </div><div class="flex flex-col gap-4 mt-4"><div class="pb-4 border-b-4 border-dotted"><div class="flex justify-between flex-wrap gap-2"><div class="flex-1"><div class="text-sm"> Dec 2023 - Present • <label class="font-bold"></label></div><div class="font-bold">Full Stack Software Engineer</div></div><div class="flex-1 text-end"><div class="text-sm"><a href="https://www.avanade.com/"> Avanade </a></div><div class="font-bold text-lg italic"> C# | .Net | Typescript | Angular | Azure </div></div></div><ul class="list-disc mt-4 pl-5"><li> Developed new features and <label class="text-hl"> enhancements for live projects </label> while supporting the team. </li><li> Ensured optimal performance, troubleshooting, and alignment with business goals in <label class="text-hl"> financial and banking applications. </label></li></ul></div><div class="pb-4 border-b-4 border-dotted"><div class="flex justify-between flex-wrap gap-2"><div class="flex-1"><div class="text-sm"> Sep 2021 - Dec 2023 • <label class="font-bold">2 years 1 month</label></div><div class="font-bold">Full Stack Software Engineer</div></div><div class="flex-1 text-end"><div class="text-sm"><a href="https://www.qualitas.it/"> Qualitas Informarica </a></div><div class="font-bold">C# | .Net | Typescript | Angular</div></div></div><ul class="list-disc mt-4 pl-5"><li><label class="text-hl">Design and implementation </label> of a Full-Stack web application (Angular 15 and .Net 7) with database integration, real-time signals, and communication with proprietary or standard external environments. </li><li> Developed and supported a <label class="text-hl"> fully customized .net 7 (WinForm) </label> application for a installer. </li><li> Enter a company with a consolidated product and an already formed development team to which a functional product leader refers. </li><li> Management and completion of <label class="text-hl">bugs, features</label> or new features with a deadline. </li><li><label class="text-hl">English </label> is the main language used by the development team. </li></ul></div><div class="pb-4 border-b-4 border-dotted"><div class="flex justify-between flex-wrap gap-2"><div class="flex-1"><div class="text-sm"> Dec 2019 - Aug 2021 • <label class="font-bold"> ~ 2 year </label></div><div class="font-bold">Full Stack Software Engineer</div></div><div class="flex-1 text-end"><div class="text-sm"><a href="https://www.mair-research.com/"> Mair Research </a></div><div class="font-bold">C# | .Net | Blazor</div></div></div><ul class="list-disc mt-4 pl-5"><li><label class="text-hl">Design and development </label> of the configurable server architecture, DAL level data management, implementation of <label class="text-hl"> Web API</label>, communication with <label class="text-hl">PLC</label> mainly using the OPC UA standard and communication based on <label class="text-hl"> real-time</label> protocols. </li><li><label class="text-hl">Design and development</label> of the Front-End Web client architecture usingRazor Pages, HTML, CSS and Blazor, with the use of external and ad hoc components, with <label class="text-hl">real time</label> information exchange. </li><li><label class="text-hl"> SQL database design</label> and implementation. </li><li> Implementation of <label class="text-hl">HMI software</label> for Automation and Industry 4.0. </li></ul></div><div><div class="flex justify-between flex-wrap gap-2"><div class="flex-1"><div class="text-sm"> Jan 2018 - Dec 2019 • <label class="font-bold"> 2 year </label></div><div class="font-bold">Application Consultant</div></div><div class="flex-1 text-end"><div class="text-sm"><a href="https://www.qualitas.it/"> Qualitas Informarica </a></div><div class="font-bold">C# | .Net | Blazor</div></div></div><ul class="list-disc mt-4 pl-5"><li> Management of proprietary NetPro applications (Server, Client, communications via ODBC). </li><li> NetPro software installation and configuration for production management </li><li><label class="text-hl">Team work of 2 to 5 </label> people consisting of project leader and consultant with project analysis. </li><li><label class="text-hl"> Consultancy for various or particular customer requests, implementation, development and completion. </label></li><li> Implementation and maintenance of projects concerning <label class="text-hl">Industry 4.0 and Automation.</label></li><li><label class="text-hl">SQL database management </label> and and intermediate complexity querying. </li></ul></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-2"><div><div class="text-2xl font-bold border-b-4 border-base-300"> Achievements </div><ul class="list-disc mt-4 pl-5"><li>Growing LinkedIn community (2.5k+ followers)</li><li>9+ year as blood donors</li></ul></div><div><div class="text-2xl font-bold border-b-4 border-base-300"> Certifications </div><ul class="list-disc mt-4 pl-5"><li>Microsoft Azure Fundamentals (AZ 900)</li><li>Microsoft Developer Associate (AZ 204)</li></ul></div></div></div></app-cv><!----></div><app-footer ngh="2"><footer class="footer footer-center bg-base-300 text-base-content p-4"><aside class="w-full flex justify-between flex-wrap"><div>Kevin Valmorbida - Software Engineer</div><div class="flex gap-4"><a href="https://www.linkedin.com/in/kevinvalmorbida/" class="btn btn-square btn-ghost bg-base-100"><fa-icon class="ng-fa-icon" ngh="2"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></fa-icon></a><a href="https://github.com/KevinValmo" class="btn btn-square btn-ghost bg-base-100"><fa-icon class="ng-fa-icon" ngh="2"><svg role="img" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></fa-icon></a></div></aside></footer></app-footer></app-root>
+    
+  
+
+<script id="ng-state" type="application/json">{"__nghData__":[{"t":{"5":"t0"},"c":{"5":[{"i":"t0","r":1,"x":2}]}},{"t":{"71":"t4","77":"t5"},"c":{"71":[{"i":"t4","r":1,"x":6}],"77":[{"i":"t5","r":1,"x":17}]}},{},{"c":{"2":[{"i":"c1412164786","r":1}]}}]}</script></body></html>
