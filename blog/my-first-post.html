@@ -1,92 +1,168 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Kevin - Welcome to my blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="Kevin Valmorbida">
-  <meta property="og:title" content="Welcome to my blog - My first blog post on my new blog.">
-  <meta property="og:description" content="My first blog post on my new blog, powered by Analog, the Angular meta-framework.">
-  <meta property="og:image" content="../public/ponale-garda-lake.jpg">
-  <meta property="og:url" content="https://kevinvalmo.github.io/blog/my-first-post">
-  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
-  <link rel="stylesheet" href="../public/style.css">
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <a href="/blog/">Blog 📖</a>
-      <a href="/about/">About 🧑‍🦰</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <title>Kevin - Welcome to my blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kevin Valmorbida" />
+    <meta
+      property="og:title"
+      content="Welcome to my blog - My first blog post on my new blog."
+    />
+    <meta
+      property="og:description"
+      content="My first blog post on my new blog, powered by Analog, the Angular meta-framework."
+    />
+    <meta property="og:image" content="../public/ponale-garda-lake.jpg" />
+    <meta
+      property="og:url"
+      content="https://kevinvalmo.github.io/blog/my-first-post"
+    />
+    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+    <link rel="stylesheet" href="../public/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav>
+        <a href="/blog/">Blog 📖</a>
+        <a href="/about/">About 🧑‍🦰</a>
+        <a href="/design/">Design 🖋️</a>
+      </nav>
+    </header>
 
-  <!-- Content -->
-  <main class="container">
-    <article>
-      <div class="hero-image-wrap">
-        <img src="../public/ponale-garda-lake.jpg" alt="Ponale, Garda Lake">
-        <span class="hero-caption">Ponale, Garda Lake - Kevin Valmorbida</span>
-      </div>
-
-      <h1>Welcome to my blog</h1>
-      <p><em>My first blog post on my new blog, powered by Analog, the Angular meta-framework.</em></p>
-
-      <div class="post-meta">
-        <div class="tags">
-          <span class="tag">c#</span>
-          <span class="tag">typescript</span>
-          <span class="tag">angular</span>
-          <span class="tag">ui-library</span>
-          <span class="tag">tailwindcss</span>
+    <!-- Content -->
+    <main class="container">
+      <article>
+        <div class="hero-image-wrap">
+          <img src="../public/ponale-garda-lake.jpg" alt="Ponale, Garda Lake" />
+          <span class="hero-caption"
+            >Ponale, Garda Lake - Kevin Valmorbida</span
+          >
         </div>
-        <small><em>⏳ 2 min read &nbsp;|&nbsp; Aug 26, 2024</em></small>
-      </div>
 
-      <hr>
+        <h1>Welcome to my blog</h1>
+        <p>
+          <em
+            >My first blog post on my new blog, powered by Analog, the Angular
+            meta-framework.</em
+          >
+        </p>
 
-      <h2>Long Time No See</h2>
-      <p>It's been a while since my last blog update. Life has kept me busy with work and various projects, but I'm thrilled to be back and eager to share my journey with you. I've been working extensively with Angular, and while I'm still honing my skills, I've gained valuable experience through home projects and experimentation.</p>
+        <div class="post-meta">
+          <div class="tags">
+            <span class="tag">c#</span>
+            <span class="tag">typescript</span>
+            <span class="tag">angular</span>
+            <span class="tag">ui-library</span>
+            <span class="tag">tailwindcss</span>
+          </div>
+          <small><em>⏳ 2 min read &nbsp;|&nbsp; Aug 26, 2024</em></small>
+        </div>
 
-      <h2>Building a Custom UI Component Library</h2>
-      <p>One of the most rewarding projects I've tackled recently is the creation of a custom UI component library for Angular, inspired by the <a href="https://daisyui.com/">daisyUI</a> library for <a href="https://tailwindcss.com/">TailwindCSS</a>. While building such a library can be challenging, it's also incredibly fulfilling. Through this project, I deepened my understanding of templating, styling, and the Angular component lifecycle. With these new skills, I feel more confident than ever in my ability to take on any project. Though there's always more to learn, I'm excited to continue growing and improving.</p>
+        <hr />
 
-      <h2>Should I Use My Custom Library in My Next Project?</h2>
-      <p>The short answer? Probably not. While custom libraries can be powerful, there are plenty of excellent UI libraries out there that are well-maintained, thoroughly documented, and open-source, like <a href="https://primeng.org/">primeng</a>. For small to medium-sized teams, particularly those in product development, it's usually more efficient to leverage existing solutions rather than reinventing the wheel. This allows you to focus on what truly matters: the business logic and user experience of your application.</p>
+        <h2>Long Time No See</h2>
+        <p>
+          It's been a while since my last blog update. Life has kept me busy
+          with work and various projects, but I'm thrilled to be back and eager
+          to share my journey with you. I've been working extensively with
+          Angular, and while I'm still honing my skills, I've gained valuable
+          experience through home projects and experimentation.
+        </p>
 
-      <h2>Enter Analog: The Angular Meta-Framework</h2>
-      <p>A few months ago, I stumbled upon <a href="https://analogjs.org/">Analog</a> while searching for an Angular blog template. I had previously attempted to create my own blog template but had to put it on hold due to time constraints. Thankfully, I've recently found the time to revisit this project, and setting up a blog with the Analog template was a breeze. Analog, of course, is not a blog template, it's a meta-framework that allows you to build Angular applications quickly and efficiently by providing a set of pre-built components, services, and utilities like <a href="https://angular.io/guide/ssr">SSR</a>, <a href="https://angular.dev/guide/prerendering">SSG</a>, <a href="https://analogjs.org/docs/features/routing/overview">file based routing</a>, and more. Like what Next.js is to React, Analog is to Angular.</p>
+        <h2>Building a Custom UI Component Library</h2>
+        <p>
+          One of the most rewarding projects I've tackled recently is the
+          creation of a custom UI component library for Angular, inspired by the
+          <a href="https://daisyui.com/">daisyUI</a> library for
+          <a href="https://tailwindcss.com/">TailwindCSS</a>. While building
+          such a library can be challenging, it's also incredibly fulfilling.
+          Through this project, I deepened my understanding of templating,
+          styling, and the Angular component lifecycle. With these new skills, I
+          feel more confident than ever in my ability to take on any project.
+          Though there's always more to learn, I'm excited to continue growing
+          and improving.
+        </p>
 
-      <h2>This Blog's Setup</h2>
-      <p>The blog isn't completed yet but here please find the link to this blog's <a href="https://github.com/KevinValmo/kevinvalmo.github.io">GitHub Repo</a>. I appreciate any feedback you may have on the blog's design, content, or functionality and don't forget to star the repo if you find it useful.</p>
+        <h2>Should I Use My Custom Library in My Next Project?</h2>
+        <p>
+          The short answer? Probably not. While custom libraries can be
+          powerful, there are plenty of excellent UI libraries out there that
+          are well-maintained, thoroughly documented, and open-source, like
+          <a href="https://primeng.org/">primeng</a>. For small to medium-sized
+          teams, particularly those in product development, it's usually more
+          efficient to leverage existing solutions rather than reinventing the
+          wheel. This allows you to focus on what truly matters: the business
+          logic and user experience of your application.
+        </p>
 
-      <h2>Conclusion</h2>
-      <p>I'm thrilled to be back and excited to share my thoughts and experiences with you. I hope you enjoy the content on my blog and find it useful. I'll do my best to keep it updated regularly. If you have any questions or suggestions, please feel free to leave a comment, I'm always happy to help. Thank you for reading, and I look forward to connecting with you soon!</p>
+        <h2>Enter Analog: The Angular Meta-Framework</h2>
+        <p>
+          A few months ago, I stumbled upon
+          <a href="https://analogjs.org/">Analog</a> while searching for an
+          Angular blog template. I had previously attempted to create my own
+          blog template but had to put it on hold due to time constraints.
+          Thankfully, I've recently found the time to revisit this project, and
+          setting up a blog with the Analog template was a breeze. Analog, of
+          course, is not a blog template, it's a meta-framework that allows you
+          to build Angular applications quickly and efficiently by providing a
+          set of pre-built components, services, and utilities like
+          <a href="https://angular.io/guide/ssr">SSR</a>,
+          <a href="https://angular.dev/guide/prerendering">SSG</a>,
+          <a href="https://analogjs.org/docs/features/routing/overview"
+            >file based routing</a
+          >, and more. Like what Next.js is to React, Analog is to Angular.
+        </p>
 
-      <hr>
+        <h2>This Blog's Setup</h2>
+        <p>
+          The blog isn't completed yet but here please find the link to this
+          blog's
+          <a href="https://github.com/KevinValmo/kevinvalmo.github.io"
+            >GitHub Repo</a
+          >. I appreciate any feedback you may have on the blog's design,
+          content, or functionality and don't forget to star the repo if you
+          find it useful.
+        </p>
 
-      <p><strong>Feel free to share with your friends!</strong></p>
-      <a href="https://www.linkedin.com/feed/?shareActive=true?&text=Check%20out%20this%20post!%20%F0%9F%9A%80%20https://kevinvalmo.github.io/blog/my-first-post"
-         target="_blank" rel="noopener noreferrer">
-        💼
-        Share on LinkedIn
-      </a>
-    </article>
-  </main>
+        <h2>Conclusion</h2>
+        <p>
+          I'm thrilled to be back and excited to share my thoughts and
+          experiences with you. I hope you enjoy the content on my blog and find
+          it useful. I'll do my best to keep it updated regularly. If you have
+          any questions or suggestions, please feel free to leave a comment, I'm
+          always happy to help. Thank you for reading, and I look forward to
+          connecting with you soon!
+        </p>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <span>Kevin Valmorbida - Software Engineer</span>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/kevinvalmorbida/" aria-label="LinkedIn">
-          💼
+        <hr />
+
+        <p><strong>Feel free to share with your friends!</strong></p>
+        <a
+          href="https://www.linkedin.com/feed/?shareActive=true?&text=Check%20out%20this%20post!%20%F0%9F%9A%80%20https://kevinvalmo.github.io/blog/my-first-post"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          💼 Share on LinkedIn
         </a>
-        <a href="https://github.com/KevinValmo" aria-label="GitHub">
-          🐙
-        </a>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-inner">
+        <span>Kevin Valmorbida - Software Engineer</span>
+        <div class="footer-links">
+          <a
+            href="https://www.linkedin.com/in/kevinvalmorbida/"
+            aria-label="LinkedIn"
+          >
+            💼
+          </a>
+          <a href="https://github.com/KevinValmo" aria-label="GitHub"> 🐙 </a>
+        </div>
       </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
