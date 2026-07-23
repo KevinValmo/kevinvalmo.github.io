@@ -663,3 +663,107 @@ footer {
 .ds-specimen h4 {
   margin-top: 0;
 }
+
+/* ============================================================
+   15 · APP SHOWCASE
+   ============================================================ */
+.app-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+@media (min-width: 36rem) {
+  .app-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-inset);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+  transition:
+    box-shadow 0.15s,
+    transform 0.15s;
+}
+
+.app-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.app-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.app-icon {
+  flex: 0 0 auto;
+  width: 3.25rem;
+  height: 3.25rem;
+  object-fit: cover;
+  display: block;
+  background: var(--bg-nav);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.app-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: var(--leading-snug);
+  color: var(--color-ink);
+}
+
+.app-card p {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.app-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-1);
+}
+
+.app-store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-paper);
+  background: var(--accent);
+  border: 1px solid var(--accent-h);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-4);
+  transition: background 0.15s;
+}
+
+.app-store-link:hover,
+.app-store-link:visited {
+  color: var(--color-paper);
+}
+
+.app-store-link:hover {
+  background: var(--accent-h);
+}
