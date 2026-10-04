@@ -1,7 +1,10 @@
 <!doctype html>
 <!--
   NEW POST TEMPLATE — copy this file to blog/<slug>.html, then:
-  1. Replace every {{PLACEHOLDER}} (title, description, slug, dates, image, tags).
+  1. Replace every {{PLACEHOLDER}} (title, subtitle, description, slug, dates,
+     image, tags). {{SUBTITLE}} is the short line shown under the title;
+     {{DESCRIPTION}} (meta + og) must be 100–160 characters: LinkedIn warns
+     below 100, Google truncates above ~160.
   2. Images in public/: <name>.jpg cropped to 2:1 (max 1440px wide, JPEG q~80)
      and <name>.low.jpg cropped to 16:9 at 640x360 (JPEG q~75).
   3. Add the post card to blog/index.html (thumbnail = the .low.jpg variant).
@@ -65,7 +68,7 @@
 
         <h1>{{TITLE}}</h1>
         <p>
-          <em>{{DESCRIPTION}}</em>
+          <em>{{SUBTITLE}}</em>
         </p>
 
         <div class="post-meta">

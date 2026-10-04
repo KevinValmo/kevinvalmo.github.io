@@ -123,13 +123,16 @@ HTML/CSS conventions observed across the codebase:
   `og:description`, `og:image`, `og:url`, `twitter:card`, the favicon links and the feed
   `link rel="alternate"`. **`og:image`, `og:url` and `canonical` must be absolute URLs**
   (`https://kevinvalmo.github.io/...`): social networks do not resolve relative paths.
+- `meta description` and `og:description` are **100–160 characters**: LinkedIn's Post
+  Inspector warns below 100, Google truncates snippets above ~160.
 - The root `index.html` carries the `google-site-verification` meta tag for Google Search
   Console. **Never remove it**, or the site loses its verified ownership.
 
 ## Adding a New Blog Post
 
 1. Copy `_post-template.html` to `blog/<slug>.html` and follow the checklist at its top.
-2. Replace every `{{PLACEHOLDER}}`: title, description, slug, dates (ISO and human),
+2. Replace every `{{PLACEHOLDER}}`: title, subtitle (short, shown under the title),
+   description (100–160 characters, for meta and Open Graph), slug, dates (ISO and human),
    hero image and its dimensions, tags, read-time estimate, and the body content.
 3. Place the images in `public/`: `<name>.jpg` (2:1) and `<name>.low.jpg` (16:9, 640×360).
 4. Add the post card to the top of `blog/index.html` following the existing pattern
