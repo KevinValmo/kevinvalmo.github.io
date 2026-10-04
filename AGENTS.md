@@ -123,6 +123,8 @@ HTML/CSS conventions observed across the codebase:
   `og:description`, `og:image`, `og:url`, `twitter:card`, the favicon links and the feed
   `link rel="alternate"`. **`og:image`, `og:url` and `canonical` must be absolute URLs**
   (`https://kevinvalmo.github.io/...`): social networks do not resolve relative paths.
+- The root `index.html` carries the `google-site-verification` meta tag for Google Search
+  Console. **Never remove it**, or the site loses its verified ownership.
 
 ## Adding a New Blog Post
 
