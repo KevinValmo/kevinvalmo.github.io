@@ -1,0 +1,34 @@
+name: Check links
+
+# Separate from the deploy workflow on purpose: a broken link never blocks a deploy
+on:
+  push:
+    branches:
+      - 'main'
+  schedule:
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Root-absolute links (/blog/, /design/) resolve against the repo root,
+      # extensionless post URLs fall back to .html, directories to index.html.
+      # LinkedIn blocks automated requests, and the site's own absolute URLs
+      # (canonical, og:*) are already covered by the local file checks.
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --root-dir '${{ github.workspace }}'
+            --fallback-extensions html
+            --index-files index.html
+            --exclude-path '_post-template\.html'
+            --exclude 'linkedin\.com'
+            --exclude '^https://kevinvalmo\.github\.io'
+            './**/*.html'
