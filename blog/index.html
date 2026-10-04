@@ -1,37 +1,74 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Kevin - Blog</title>
+    <title>Blog — Kevin Valmorbida</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Kevin Valmorbida" />
-    <link rel="icon" type="image/x-icon" href="../public/favicon.ico" />
+    <meta
+      name="description"
+      content="Articles by Kevin Valmorbida on software engineering, web development and simplicity."
+    />
+    <link rel="canonical" href="https://kevinvalmo.github.io/blog/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Kevin Valmorbida" />
+    <meta property="og:title" content="Blog — Kevin Valmorbida" />
+    <meta
+      property="og:description"
+      content="Articles by Kevin Valmorbida on software engineering, web development and simplicity."
+    />
+    <meta
+      property="og:image"
+      content="https://kevinvalmo.github.io/public/limone-garda.jpg"
+    />
+    <meta property="og:url" content="https://kevinvalmo.github.io/blog/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="../favicon.ico" sizes="32x32" />
+    <link rel="icon" href="../public/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="../public/apple-touch-icon.png" />
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="Kevin Valmorbida — Blog"
+      href="/feed.xml"
+    />
     <link rel="stylesheet" href="../public/style.css" />
   </head>
   <body>
     <!-- Header -->
     <header>
-      <nav>
-        <a href="/blog/">Blog 📖</a>
-        <a href="/about/">About 🧑‍🦰</a>
-        <a href="/design/">Design 🖋️</a>
+      <nav aria-label="Main">
+        <a href="/blog/" aria-current="page"
+          >Blog <span aria-hidden="true">📖</span></a
+        >
+        <a href="/">About <span aria-hidden="true">🧑‍🦰</span></a>
+        <a href="/design/">Design <span aria-hidden="true">🖋️</span></a>
       </nav>
     </header>
 
     <!-- Content -->
     <main class="container">
       <h1>Blog</h1>
+      <p><small>Follow new posts via <a href="/feed.xml">RSS</a>.</small></p>
 
       <div class="post-list">
         <!-- Post: Back to Simplicity -->
-        <a href="/blog/back-to-simplicity.html" class="post-card">
+        <a href="/blog/back-to-simplicity" class="post-card">
           <div class="post-card-thumb">
-            <img src="../public/limone-garda.low.jpg" alt="Cover" />
+            <img
+              src="../public/limone-garda.low.jpg"
+              alt=""
+              width="640"
+              height="360"
+              decoding="async"
+            />
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <strong>Back to Simplicity</strong>
-              <small><em>Apr 10, 2026</em></small>
+              <h2 class="post-card-title">Back to Simplicity</h2>
+              <small
+                ><em><time datetime="2026-04-10">Apr 10, 2026</time></em></small
+              >
             </div>
             <p>
               Why I no longer use frameworks, libraries and development tools
@@ -47,14 +84,23 @@
         </a>
 
         <!-- Post: Enhanced Software Engineers -->
-        <a href="/blog/enhanced-software-engineers.html" class="post-card">
+        <a href="/blog/enhanced-software-engineers" class="post-card">
           <div class="post-card-thumb">
-            <img src="../public/rifugio-campogrosso.low.jpg" alt="Cover" />
+            <img
+              src="../public/rifugio-campogrosso.low.jpg"
+              alt=""
+              width="640"
+              height="360"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <strong>Enhanced Software Engineers</strong>
-              <small><em>Apr 9, 2025</em></small>
+              <h2 class="post-card-title">Enhanced Software Engineers</h2>
+              <small
+                ><em><time datetime="2025-04-09">Apr 9, 2025</time></em></small
+              >
             </div>
             <p>
               We are living in a world where enhancement applies to our work.
@@ -68,14 +114,23 @@
         </a>
 
         <!-- Post: Welcome to my blog -->
-        <a href="/blog/my-first-post.html" class="post-card">
+        <a href="/blog/my-first-post" class="post-card">
           <div class="post-card-thumb">
-            <img src="../public/ponale-garda-lake.low.jpg" alt="Cover" />
+            <img
+              src="../public/ponale-garda-lake.low.jpg"
+              alt=""
+              width="640"
+              height="360"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <strong>Welcome to my blog</strong>
-              <small><em>Aug 26, 2024</em></small>
+              <h2 class="post-card-title">Welcome to my blog</h2>
+              <small
+                ><em><time datetime="2024-08-26">Aug 26, 2024</time></em></small
+              >
             </div>
             <p>
               My first blog post on my new blog, powered by Analog, the Angular

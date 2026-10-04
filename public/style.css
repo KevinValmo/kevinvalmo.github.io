@@ -7,6 +7,8 @@
    1 · DESIGN TOKENS
    ============================================================ */
 :root {
+  color-scheme: light dark;
+
   /* Palette — sepia ink-on-paper */
   --color-paper: #fdf8f0;
   --color-parchment: #ede5d0;
@@ -86,8 +88,10 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
@@ -206,7 +210,7 @@ blockquote cite {
   font-size: var(--text-sm);
   font-style: normal;
   font-family: var(--font-sans);
-  color: var(--color-ink-faint);
+  color: var(--text-muted);
 }
 
 ul,
@@ -257,11 +261,16 @@ a {
   text-decoration-thickness: 1px;
   transition: color 0.15s;
 }
+/* :visited must precede :hover, otherwise visited links lose their hover state */
+a:visited {
+  color: var(--visited);
+}
 a:hover {
   color: var(--accent-h);
 }
-a:visited {
-  color: var(--visited);
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ============================================================
@@ -296,13 +305,15 @@ header {
 
 header nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-1);
   padding: var(--space-3) var(--space-4);
   margin: 0;
 }
 
-header nav a {
+header nav a,
+.ds-nav-replica > span {
   text-decoration: none;
   padding: var(--space-2) var(--space-4);
   font-family: var(--font-sans);
@@ -318,13 +329,15 @@ header nav a {
     background 0.15s;
 }
 
-header nav a:hover {
-  border-color: var(--border);
-  background: rgba(200, 185, 154, 0.25);
+header nav a:visited {
   color: var(--text);
 }
 
-header nav a:visited {
+header nav a:hover,
+header nav a[aria-current="page"],
+.ds-nav-replica .is-active {
+  border-color: var(--border);
+  background: color-mix(in srgb, var(--border) 25%, transparent);
   color: var(--text);
 }
 
@@ -335,6 +348,11 @@ header nav a:visited {
   max-width: 48rem;
   margin: var(--space-8) auto;
   padding: 0 var(--space-4);
+}
+
+.not-found {
+  text-align: center;
+  padding-top: var(--space-16);
 }
 
 /* ============================================================
@@ -376,16 +394,16 @@ footer {
 .footer-links a {
   text-decoration: none;
   font-size: 1.25rem;
-  opacity: 0.6;
+  opacity: 0.8;
   color: inherit;
   transition: opacity 0.15s;
 }
 
-.footer-links a:hover {
-  opacity: 1;
+.footer-links a:visited {
   color: inherit;
 }
-.footer-links a:visited {
+.footer-links a:hover {
+  opacity: 1;
   color: inherit;
 }
 
@@ -442,7 +460,8 @@ footer {
     transform 0.15s;
 }
 
-.post-card:hover {
+.post-card:hover,
+.post-card:focus-visible {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
 }
@@ -498,10 +517,20 @@ footer {
   margin-bottom: var(--space-1);
 }
 
-.post-card-header strong {
-  font-family: var(--font-serif);
+.post-card-header small {
+  white-space: nowrap;
+}
+
+/* The card title is an <h2> for heading navigation, styled as card text */
+.post-card-title {
+  margin: 0;
   font-size: var(--text-base);
   line-height: var(--leading-snug);
+  letter-spacing: normal;
+}
+
+.post-card-title::after {
+  display: none;
 }
 
 /* ============================================================
@@ -519,6 +548,7 @@ footer {
 
 .hero-image-wrap img {
   width: 100%;
+  height: auto;
   max-height: 22rem;
   object-fit: cover;
   display: block;
@@ -532,8 +562,8 @@ footer {
   font-family: var(--font-sans);
   font-size: var(--text-xs);
   letter-spacing: 0.04em;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  color: var(--color-paper);
+  background: color-mix(in srgb, var(--color-ink) 65%, transparent);
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
 }
@@ -550,37 +580,30 @@ footer {
   color: var(--text-muted);
 }
 
+.post-note {
+  margin: 0 0 var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-highlight);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+}
+
+.post-nav {
+  margin-top: var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+}
+
 /* ============================================================
-   13 · CV UTILITIES
+   13 · GRID UTILITIES
    ============================================================ */
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   gap: var(--space-4);
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: var(--space-4);
-}
-
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
-
-.experience-entry {
-  border-bottom: 1px dotted var(--border);
-  padding-bottom: var(--space-4);
-  margin-bottom: var(--space-4);
-}
-
-.cv-link {
-  font-style: italic;
-  text-decoration: underline;
 }
 
 /* ============================================================
@@ -664,6 +687,18 @@ footer {
   margin-top: 0;
 }
 
+/* static copy of the header nav; link styles are shared with section 6 */
+.ds-nav-replica {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-nav);
+  border-bottom: 3px double var(--border);
+  border-radius: var(--radius);
+}
+
 /* ============================================================
    15 · APP SHOWCASE
    ============================================================ */
@@ -689,14 +724,6 @@ footer {
   background: var(--bg-inset);
   box-shadow: var(--shadow-sm);
   padding: var(--space-5);
-  transition:
-    box-shadow 0.15s,
-    transform 0.15s;
-}
-
-.app-card:hover {
-  box-shadow: var(--shadow);
-  transform: translateY(-2px);
 }
 
 .app-card-head {
@@ -717,6 +744,7 @@ footer {
 }
 
 .app-title {
+  margin: 0;
   font-family: var(--font-serif);
   font-size: var(--text-lg);
   font-weight: 700;
@@ -766,4 +794,103 @@ footer {
 
 .app-store-link:hover {
   background: var(--accent-h);
+}
+
+/* ============================================================
+   16 · DARK SCHEME
+   Same tokens, remapped to "lamp-lit parchment". Screen only,
+   so printing always uses the light palette.
+   ============================================================ */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: #1c1610;
+    --color-parchment: #2a2118;
+    --color-inset: #241c15;
+    --color-rule: #4a3c2c;
+    --color-rule-strong: #6b5743;
+    --color-ink: #efe6d4;
+    --color-ink-muted: #bcaa8f;
+    --color-ink-faint: #8a785f;
+    --color-accent: #d8a878;
+    --color-accent-dark: #f0c99d;
+    --color-visited: #c49f7b;
+    --color-highlight: #3b2f1f;
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* ============================================================
+   17 · REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  a,
+  header nav a,
+  .footer-links a,
+  .post-card,
+  .post-card-thumb img,
+  .app-store-link {
+    transition: none;
+  }
+
+  .post-card:hover,
+  .post-card:focus-visible,
+  .post-card:hover .post-card-thumb img {
+    transform: none;
+  }
+}
+
+/* ============================================================
+   18 · PRINT
+   ============================================================ */
+@media print {
+  /* keep the browser's canvas light even when the OS is in dark mode */
+  :root {
+    color-scheme: light;
+  }
+
+  header,
+  footer,
+  .post-share,
+  .post-nav {
+    display: none;
+  }
+
+  body {
+    background: none;
+    font-size: 11pt;
+    line-height: var(--leading-normal);
+  }
+
+  .container {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a,
+  a:visited {
+    color: inherit;
+  }
+
+  .post-card,
+  .app-card {
+    box-shadow: none;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  .post-card,
+  .app-card,
+  pre,
+  blockquote,
+  table {
+    break-inside: avoid;
+  }
 }

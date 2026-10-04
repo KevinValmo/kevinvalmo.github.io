@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Kevin Valmorbida — Blog</title>
+  <subtitle>Articles on software engineering, web development and simplicity.</subtitle>
+  <link href="https://kevinvalmo.github.io/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://kevinvalmo.github.io/blog/" rel="alternate" type="text/html" />
+  <id>https://kevinvalmo.github.io/blog/</id>
+  <updated>2026-04-10T00:00:00Z</updated>
+  <author>
+    <name>Kevin Valmorbida</name>
+    <uri>https://kevinvalmo.github.io/</uri>
+  </author>
+  <icon>https://kevinvalmo.github.io/public/apple-touch-icon.png</icon>
+
+  <!-- Newest first. When adding a post, add an <entry> here and bump <updated> above. -->
+
+  <entry>
+    <title>Back to Simplicity</title>
+    <link href="https://kevinvalmo.github.io/blog/back-to-simplicity" rel="alternate" type="text/html" />
+    <id>https://kevinvalmo.github.io/blog/back-to-simplicity</id>
+    <published>2026-04-10T00:00:00Z</published>
+    <updated>2026-04-10T00:00:00Z</updated>
+    <summary>Why I no longer use frameworks, libraries and development tools for this blog.</summary>
+    <category term="html" />
+    <category term="css" />
+    <category term="simplicity" />
+    <category term="web" />
+  </entry>
+
+  <entry>
+    <title>Enhanced Software Engineers</title>
+    <link href="https://kevinvalmo.github.io/blog/enhanced-software-engineers" rel="alternate" type="text/html" />
+    <id>https://kevinvalmo.github.io/blog/enhanced-software-engineers</id>
+    <published>2025-04-09T00:00:00Z</published>
+    <updated>2025-04-09T00:00:00Z</updated>
+    <summary>We are living in a world where enhancement applies to our work.</summary>
+    <category term="software-engineering" />
+    <category term="life" />
+    <category term="work" />
+  </entry>
+
+  <entry>
+    <title>Welcome to my blog</title>
+    <link href="https://kevinvalmo.github.io/blog/my-first-post" rel="alternate" type="text/html" />
+    <id>https://kevinvalmo.github.io/blog/my-first-post</id>
+    <published>2024-08-26T00:00:00Z</published>
+    <updated>2024-08-26T00:00:00Z</updated>
+    <summary>My first blog post on my new blog, powered by Analog, the Angular meta-framework.</summary>
+    <category term="c#" />
+    <category term="typescript" />
+    <category term="angular" />
+    <category term="ui-library" />
+    <category term="tailwindcss" />
+  </entry>
+</feed>

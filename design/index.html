@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Kevin - Design System</title>
+  <title>Design System — Kevin Valmorbida</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Kevin Valmorbida">
+  <meta name="description" content="The visual language of kevinvalmo.github.io — a sepia typographic system inspired by letterpress newspapers and ink-on-parchment printing.">
+  <link rel="canonical" href="https://kevinvalmo.github.io/design/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Kevin Valmorbida">
   <meta property="og:title" content="Design System — Sepia Typographic Style">
   <meta property="og:description" content="The visual language of kevinvalmo.github.io — a sepia typographic system inspired by letterpress newspapers and ink-on-parchment printing.">
+  <meta property="og:image" content="https://kevinvalmo.github.io/public/limone-garda.jpg">
   <meta property="og:url" content="https://kevinvalmo.github.io/design/">
-  <link rel="icon" type="image/x-icon" href="../public/favicon.ico">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../public/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../public/apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="Kevin Valmorbida — Blog" href="/feed.xml">
   <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-    <nav>
-      <a href="/blog/">Blog 📖</a>
-      <a href="/about/">About 🧑‍🦰</a>
-      <a href="/design/">Design 🖋️</a>
+    <nav aria-label="Main">
+      <a href="/blog/">Blog <span aria-hidden="true">📖</span></a>
+      <a href="/">About <span aria-hidden="true">🧑‍🦰</span></a>
+      <a href="/design/" aria-current="page">Design <span aria-hidden="true">🖋️</span></a>
     </nav>
   </header>
 
   <!-- Content -->
   <main class="container">
-    <h1>Design System 🖋️</h1>
+    <h1>Design System <span aria-hidden="true">🖋️</span></h1>
 
     <p class="ds-intro">
       A sepia typographic system inspired by letterpress newspapers and ink-on-parchment printing.
@@ -160,6 +169,37 @@
         <tr><td><code>--accent</code></td><td><code>--color-accent</code></td><td>Links, h2 rule, left borders</td></tr>
         <tr><td><code>--accent-h</code></td><td><code>--color-accent-dark</code></td><td>Link hover state</td></tr>
         <tr><td><code>--visited</code></td><td><code>--color-visited</code></td><td>Visited links</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Dark scheme</h3>
+    <p>
+      When the reader's system asks for a dark theme (<code>prefers-color-scheme: dark</code>),
+      the same raw tokens are remapped to a "lamp-lit parchment" palette, so components need no
+      changes. The swatches above always show the active scheme; the hex values refer to the light
+      one. Print always uses the light palette.
+    </p>
+    <table>
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Light</th>
+          <th>Dark</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>--color-paper</code></td><td>#fdf8f0</td><td>#1c1610</td></tr>
+        <tr><td><code>--color-parchment</code></td><td>#ede5d0</td><td>#2a2118</td></tr>
+        <tr><td><code>--color-inset</code></td><td>#f2ead8</td><td>#241c15</td></tr>
+        <tr><td><code>--color-rule</code></td><td>#c8b99a</td><td>#4a3c2c</td></tr>
+        <tr><td><code>--color-rule-strong</code></td><td>#9e8668</td><td>#6b5743</td></tr>
+        <tr><td><code>--color-ink</code></td><td>#231608</td><td>#efe6d4</td></tr>
+        <tr><td><code>--color-ink-muted</code></td><td>#7a6245</td><td>#bcaa8f</td></tr>
+        <tr><td><code>--color-ink-faint</code></td><td>#b39876</td><td>#8a785f</td></tr>
+        <tr><td><code>--color-accent</code></td><td>#8b5e3c</td><td>#d8a878</td></tr>
+        <tr><td><code>--color-accent-dark</code></td><td>#5c3a1e</td><td>#f0c99d</td></tr>
+        <tr><td><code>--color-visited</code></td><td>#6b4e31</td><td>#c49f7b</td></tr>
+        <tr><td><code>--color-highlight</code></td><td>#f3e9c6</td><td>#3b2f1f</td></tr>
       </tbody>
     </table>
 
@@ -407,12 +447,12 @@
       <div style="max-width: 20rem;">
         <div class="post-card" style="pointer-events: none; cursor: default;">
           <div class="post-card-thumb" style="background: var(--color-parchment); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-            🗞️
+            <span aria-hidden="true">🗞️</span>
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <strong>Back to Simplicity</strong>
-              <small><em>Apr 10, 2026</em></small>
+              <h2 class="post-card-title">Back to Simplicity</h2>
+              <small><em><time datetime="2026-04-10">Apr 10, 2026</time></em></small>
             </div>
             <p>Why I no longer use frameworks, libraries and development tools for this blog.</p>
             <div class="tags">
@@ -435,9 +475,21 @@
     <div class="ds-specimen">
       <span class="ds-specimen-label">Hero wrap — structural example</span>
       <div class="hero-image-wrap" style="max-height: 8rem; background: var(--color-parchment); display: flex; align-items: center; justify-content: center;">
-        <span style="font-size: 4rem; opacity: 0.4;">🏔️</span>
+        <span style="font-size: 4rem; opacity: 0.4;" aria-hidden="true">🏔️</span>
         <span class="hero-caption">Location Name — Author Name</span>
       </div>
+    </div>
+
+    <h3>Post Note</h3>
+    <p>
+      A highlighted aside for editor's notes and updates added after publication, placed between
+      the post metadata and the first divider. Class: <code>.post-note</code>.
+    </p>
+    <div class="ds-specimen">
+      <span class="ds-specimen-label">Post note — example</span>
+      <p class="post-note" style="margin: 0;">
+        <strong>Update, October 2026:</strong> this post was written for an older version of the blog.
+      </p>
     </div>
 
     <h3>Navigation</h3>
@@ -445,14 +497,16 @@
       The sticky header uses a <code>3px double</code> bottom border in <code>--border</code>
       — a double rule drawn from traditional newspaper column separators. Nav links are rendered
       in <code>--font-sans</code> uppercase at <code>--text-xs</code> with generous
-      letter-spacing, giving a masthead-like character to the bar.
+      letter-spacing, giving a masthead-like character to the bar. The current page carries
+      <code>aria-current="page"</code> and keeps the hover look; keyboard focus shows an accent
+      outline via <code>:focus-visible</code>.
     </p>
     <div class="ds-specimen">
       <span class="ds-specimen-label">Navigation — static replica</span>
-      <div style="background: var(--bg-nav); border-bottom: 3px double var(--border); padding: var(--space-3) var(--space-4); display: flex; justify-content: center; gap: var(--space-1); border-radius: var(--radius);">
-        <span style="padding: var(--space-2) var(--space-4); font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); background: rgba(200,185,154,0.25);">Blog 📖</span>
-        <span style="padding: var(--space-2) var(--space-4); font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); border: 1px solid transparent; border-radius: var(--radius);">About 🧑‍🦰</span>
-        <span style="padding: var(--space-2) var(--space-4); font-family: var(--font-sans); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); border: 1px solid transparent; border-radius: var(--radius);">Design 🖋️</span>
+      <div class="ds-nav-replica">
+        <span class="is-active">Blog <span aria-hidden="true">📖</span></span>
+        <span>About <span aria-hidden="true">🧑‍🦰</span></span>
+        <span>Design <span aria-hidden="true">🖋️</span></span>
       </div>
     </div>
 

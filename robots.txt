@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_post-template.html
+
+Sitemap: https://kevinvalmo.github.io/sitemap.xml
