@@ -24,6 +24,9 @@
       property="og:image"
       content="https://kevinvalmo.github.io/public/rifugio-campogrosso.jpg"
     />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="Rifugio Campogrosso" />
     <meta
       property="og:url"
       content="https://kevinvalmo.github.io/blog/enhanced-software-engineers"
@@ -40,14 +43,33 @@
       href="/feed.xml"
     />
     <link rel="stylesheet" href="../public/style.css" />
+    <!-- Structured data for search engines: data only, nothing executes -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Enhanced Software Engineers",
+        "image": "https://kevinvalmo.github.io/public/rifugio-campogrosso.jpg",
+        "datePublished": "2025-04-09",
+        "dateModified": "2025-04-09",
+        "author": {
+          "@type": "Person",
+          "name": "Kevin Valmorbida",
+          "url": "https://kevinvalmo.github.io/"
+        },
+        "mainEntityOfPage": "https://kevinvalmo.github.io/blog/enhanced-software-engineers"
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header>
+      <div class="masthead">
+        <a class="masthead-title" href="/">Kevin Valmorbida</a>
+      </div>
       <nav aria-label="Main">
         <a href="/blog/">Blog <span aria-hidden="true">📖</span></a>
         <a href="/">About <span aria-hidden="true">🧑‍🦰</span></a>
-        <a href="/design/">Design <span aria-hidden="true">🖋️</span></a>
       </nav>
     </header>
 
@@ -55,13 +77,19 @@
     <main class="container">
       <article>
         <div class="hero-image-wrap">
-          <img
-            src="../public/rifugio-campogrosso.jpg"
-            alt="Rifugio Campogrosso"
-            width="1440"
-            height="720"
-            fetchpriority="high"
-          />
+          <picture>
+            <source
+              srcset="../public/rifugio-campogrosso.avif"
+              type="image/avif"
+            />
+            <img
+              src="../public/rifugio-campogrosso.jpg"
+              alt="Rifugio Campogrosso"
+              width="1440"
+              height="720"
+              fetchpriority="high"
+            />
+          </picture>
           <span class="hero-caption"
             >Rifugio Campogrosso - Kevin Valmorbida</span
           >
@@ -82,7 +110,8 @@
           </div>
           <small
             ><em
-              ><span aria-hidden="true">⏳</span> 6 min read &nbsp;|&nbsp;
+              >By <a href="/" rel="author">Kevin Valmorbida</a> &nbsp;|&nbsp;
+              <span aria-hidden="true">⏳</span> 6 min read &nbsp;|&nbsp;
               <time datetime="2025-04-09">Apr 9, 2025</time></em
             ></small
           >
@@ -311,7 +340,10 @@
     <!-- Footer -->
     <footer>
       <div class="footer-inner">
-        <span>Kevin Valmorbida - Software Engineer</span>
+        <span class="footer-credits"
+          >Kevin Valmorbida - Software Engineer ·
+          <a href="/design/">Colophon</a></span
+        >
         <div class="footer-links">
           <a
             href="https://www.linkedin.com/in/kevinvalmorbida/"

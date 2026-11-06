@@ -21,6 +21,9 @@
       property="og:image"
       content="https://kevinvalmo.github.io/public/limone-garda.jpg"
     />
+    <meta property="og:image:width" content="1080" />
+    <meta property="og:image:height" content="540" />
+    <meta property="og:image:alt" content="Limone, Garda Lake" />
     <meta property="og:url" content="https://kevinvalmo.github.io/blog/" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="../favicon.ico" sizes="32x32" />
@@ -37,12 +40,14 @@
   <body>
     <!-- Header -->
     <header>
+      <div class="masthead">
+        <a class="masthead-title" href="/">Kevin Valmorbida</a>
+      </div>
       <nav aria-label="Main">
         <a href="/blog/" aria-current="page"
           >Blog <span aria-hidden="true">📖</span></a
         >
         <a href="/">About <span aria-hidden="true">🧑‍🦰</span></a>
-        <a href="/design/">Design <span aria-hidden="true">🖋️</span></a>
       </nav>
     </header>
 
@@ -53,7 +58,7 @@
 
       <div class="post-list">
         <!-- Post: Back to Simplicity -->
-        <a href="/blog/back-to-simplicity" class="post-card">
+        <article class="post-card">
           <div class="post-card-thumb">
             <img
               src="../public/limone-garda.low.jpg"
@@ -65,7 +70,9 @@
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <h2 class="post-card-title">Back to Simplicity</h2>
+              <h2 class="post-card-title">
+                <a href="/blog/back-to-simplicity">Back to Simplicity</a>
+              </h2>
               <small
                 ><em><time datetime="2026-04-10">Apr 10, 2026</time></em></small
               >
@@ -81,23 +88,26 @@
               <span class="tag">web</span>
             </div>
           </div>
-        </a>
+        </article>
 
         <!-- Post: Enhanced Software Engineers -->
-        <a href="/blog/enhanced-software-engineers" class="post-card">
+        <article class="post-card">
           <div class="post-card-thumb">
             <img
               src="../public/rifugio-campogrosso.low.jpg"
               alt=""
               width="640"
               height="360"
-              loading="lazy"
               decoding="async"
             />
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <h2 class="post-card-title">Enhanced Software Engineers</h2>
+              <h2 class="post-card-title">
+                <a href="/blog/enhanced-software-engineers"
+                  >Enhanced Software Engineers</a
+                >
+              </h2>
               <small
                 ><em><time datetime="2025-04-09">Apr 9, 2025</time></em></small
               >
@@ -111,10 +121,10 @@
               <span class="tag">work</span>
             </div>
           </div>
-        </a>
+        </article>
 
         <!-- Post: Welcome to my blog -->
-        <a href="/blog/my-first-post" class="post-card">
+        <article class="post-card">
           <div class="post-card-thumb">
             <img
               src="../public/ponale-garda-lake.low.jpg"
@@ -127,7 +137,9 @@
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <h2 class="post-card-title">Welcome to my blog</h2>
+              <h2 class="post-card-title">
+                <a href="/blog/my-first-post">Welcome to my blog</a>
+              </h2>
               <small
                 ><em><time datetime="2024-08-26">Aug 26, 2024</time></em></small
               >
@@ -144,14 +156,17 @@
               <span class="tag">tailwindcss</span>
             </div>
           </div>
-        </a>
+        </article>
       </div>
     </main>
 
     <!-- Footer -->
     <footer>
       <div class="footer-inner">
-        <span>Kevin Valmorbida - Software Engineer</span>
+        <span class="footer-credits"
+          >Kevin Valmorbida - Software Engineer ·
+          <a href="/design/">Colophon</a></span
+        >
         <div class="footer-links">
           <a
             href="https://www.linkedin.com/in/kevinvalmorbida/"

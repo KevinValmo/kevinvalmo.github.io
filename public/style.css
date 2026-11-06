@@ -68,6 +68,10 @@
   --space-12: 3rem;
   --space-16: 4rem;
 
+  /* Layout */
+  --container-width: 42rem;
+  --masthead-height: 3.5rem;
+
   /* Border radii */
   --radius-sm: 0.15rem;
   --radius: 0.3rem;
@@ -88,6 +92,11 @@
   box-sizing: border-box;
 }
 
+html {
+  /* keeps focused and anchored elements clear of the pinned nav row (~67px) */
+  scroll-padding-top: calc(var(--space-16) + var(--space-4));
+}
+
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -96,6 +105,11 @@
 
 body {
   margin: 0;
+  /* column layout: on short pages the footer sits at the bottom of the window */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: var(--font-serif);
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
@@ -168,7 +182,7 @@ code {
   background: var(--bg-inset);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 0.1em 0.35em;
+  padding: 0 var(--space-1);
   color: var(--color-accent-dark);
 }
 
@@ -251,6 +265,21 @@ tr:last-child td {
   border-bottom: none;
 }
 
+/* wrapper for tables that may be wider than a phone screen */
+.table-scroll {
+  overflow-x: auto;
+  margin: 0 0 var(--space-5);
+}
+
+.table-scroll > table {
+  margin: 0;
+}
+
+/* the wrapper scrolls, so token names can stay on one line */
+.table-scroll code {
+  white-space: nowrap;
+}
+
 /* ============================================================
    4 · LINKS
    ============================================================ */
@@ -294,13 +323,48 @@ hr::before {
 
 /* ============================================================
    6 · HEADER
+   Masthead (the site name) above the nav row. The header sticks
+   with a negative offset: the masthead scrolls away and only the
+   nav row stays pinned.
    ============================================================ */
 header {
   position: sticky;
-  top: 0;
+  top: calc(-1 * var(--masthead-height));
   z-index: 50;
   background: var(--bg-nav);
   border-bottom: 3px double var(--border);
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--masthead-height);
+  padding: 0 var(--space-4);
+  border-bottom: 1px solid var(--border);
+}
+
+/* one line only (the row has a fixed height): with very large text it ends in an ellipsis */
+.masthead-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--text);
+}
+
+a.masthead-title:visited {
+  color: var(--text);
+}
+
+a.masthead-title:hover {
+  color: var(--accent-h);
 }
 
 header nav {
@@ -344,9 +408,16 @@ header nav a[aria-current="page"],
 /* ============================================================
    7 · LAYOUT
    ============================================================ */
+/* main is the flexible row of the body column: it pushes the footer down */
+main {
+  flex: 1 0 auto;
+}
+
+/* about 75 characters per line for body text */
 .container {
-  max-width: 48rem;
-  margin: var(--space-8) auto;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: var(--space-8) auto 0;
   padding: 0 var(--space-4);
 }
 
@@ -367,7 +438,7 @@ img {
    ============================================================ */
 footer {
   border-top: 3px double var(--border);
-  padding: var(--space-5) var(--space-4);
+  padding: var(--space-5) 0;
   margin-top: var(--space-12);
   background: var(--bg-nav);
 }
@@ -378,11 +449,28 @@ footer {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
-  max-width: 48rem;
+  /* same box as .container, so the footer text lines up with the content */
+  max-width: var(--container-width);
   margin: 0 auto;
+  padding: 0 var(--space-4);
   font-family: var(--font-sans);
   font-size: var(--text-sm);
   color: var(--text-muted);
+}
+
+/* the credits wrap on their own line breaks, keeping the icons beside them */
+.footer-credits {
+  flex: 1 1 12rem;
+}
+
+/* text links in the credits stay muted: the accent is below 4.5:1 on parchment */
+.footer-credits a,
+.footer-credits a:visited {
+  color: inherit;
+}
+
+.footer-credits a:hover {
+  color: var(--text);
 }
 
 .footer-links {
@@ -418,7 +506,8 @@ footer {
 
 .tag {
   display: inline-block;
-  padding: 0.15rem 0.5rem;
+  padding: var(--space-1) var(--space-2);
+  line-height: var(--leading-snug);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   font-family: var(--font-sans);
@@ -445,13 +534,15 @@ footer {
   }
 }
 
+/* The card is an <article> and only its title is a link, so screen readers
+   announce just the title; the link's ::after covers the whole card to keep
+   all of it clickable. */
 .post-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  text-decoration: none;
-  color: inherit;
   overflow: hidden;
   background: var(--bg-inset);
   box-shadow: var(--shadow-sm);
@@ -461,13 +552,9 @@ footer {
 }
 
 .post-card:hover,
-.post-card:focus-visible {
+.post-card:focus-within {
   box-shadow: var(--shadow);
   transform: translateY(-2px);
-}
-
-.post-card:visited {
-  color: inherit;
 }
 
 .post-card-thumb {
@@ -533,6 +620,58 @@ footer {
   display: none;
 }
 
+.post-card-title a,
+.post-card-title a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+/* the focus ring goes around the whole card, inset because the card clips overflow */
+.post-card-title a:focus-visible {
+  outline: none;
+}
+
+.post-card-title a:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+  border-radius: var(--radius-lg);
+}
+
+/* Post index: compact list of posts (home "Latest posts") */
+.post-index {
+  list-style: none;
+  padding: 0;
+}
+
+.post-index li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* dotted leader between title and date, like a table of contents */
+.post-index li::after {
+  content: "";
+  order: 1;
+  flex: 1;
+  min-width: var(--space-4);
+  border-bottom: 1px dotted var(--color-rule-strong);
+}
+
+.post-index time {
+  order: 2;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
 /* ============================================================
    12 · ARTICLE PROSE
    ============================================================ */
@@ -544,6 +683,11 @@ footer {
   margin-bottom: var(--space-6);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
+}
+
+/* the hero is a <picture>: AVIF with a JPEG fallback */
+.hero-image-wrap picture {
+  display: block;
 }
 
 .hero-image-wrap img {
@@ -564,7 +708,7 @@ footer {
   letter-spacing: 0.04em;
   color: var(--color-paper);
   background: color-mix(in srgb, var(--color-ink) 65%, transparent);
-  padding: 0.2rem 0.5rem;
+  padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
 }
 
@@ -647,7 +791,7 @@ footer {
   font-family: var(--font-mono);
   font-size: 0.625rem;
   color: var(--text-muted);
-  margin-bottom: 0.15rem;
+  margin-bottom: var(--space-1);
   word-break: break-all;
 }
 
@@ -687,16 +831,19 @@ footer {
   margin-top: 0;
 }
 
-/* static copy of the header nav; link styles are shared with section 6 */
+/* static copy of the header (masthead + nav); styles are shared with section 6 */
+.ds-header-replica {
+  background: var(--bg-nav);
+  border-bottom: 3px double var(--border);
+  border-radius: var(--radius);
+}
+
 .ds-nav-replica {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: var(--space-1);
   padding: var(--space-3) var(--space-4);
-  background: var(--bg-nav);
-  border-bottom: 3px double var(--border);
-  border-radius: var(--radius);
 }
 
 /* ============================================================
@@ -836,7 +983,7 @@ footer {
   }
 
   .post-card:hover,
-  .post-card:focus-visible,
+  .post-card:focus-within,
   .post-card:hover .post-card-thumb img {
     transform: none;
   }
@@ -859,6 +1006,8 @@ footer {
   }
 
   body {
+    display: block;
+    min-height: 0;
     background: none;
     font-size: 11pt;
     line-height: var(--leading-normal);

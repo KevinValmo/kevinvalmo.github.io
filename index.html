@@ -23,6 +23,9 @@
       property="og:image"
       content="https://kevinvalmo.github.io/public/rifugio-campogrosso.jpg"
     />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:image:alt" content="Rifugio Campogrosso" />
     <meta property="og:url" content="https://kevinvalmo.github.io/" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.ico" sizes="32x32" />
@@ -35,24 +38,64 @@
       href="/feed.xml"
     />
     <link rel="stylesheet" href="public/style.css" />
+    <!-- Structured data for search engines: data only, nothing executes -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://kevinvalmo.github.io/#website",
+            "url": "https://kevinvalmo.github.io/",
+            "name": "Kevin Valmorbida"
+          },
+          {
+            "@type": "ProfilePage",
+            "url": "https://kevinvalmo.github.io/",
+            "mainEntity": { "@id": "https://kevinvalmo.github.io/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://kevinvalmo.github.io/#person",
+            "name": "Kevin Valmorbida",
+            "jobTitle": "Software Engineer",
+            "url": "https://kevinvalmo.github.io/",
+            "sameAs": [
+              "https://www.linkedin.com/in/kevinvalmorbida/",
+              "https://github.com/KevinValmo"
+            ],
+            "knowsAbout": [
+              "C#",
+              "ASP.NET Core",
+              "TypeScript",
+              "Angular",
+              "Azure",
+              "Docker",
+              "SQL"
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header>
+      <div class="masthead">
+        <a class="masthead-title" href="/">Kevin Valmorbida</a>
+      </div>
       <nav aria-label="Main">
         <a href="/blog/">Blog <span aria-hidden="true">📖</span></a>
         <a href="/" aria-current="page"
           >About <span aria-hidden="true">🧑‍🦰</span></a
         >
-        <a href="/design/">Design <span aria-hidden="true">🖋️</span></a>
       </nav>
     </header>
 
     <!-- Content -->
     <main class="container">
-      <h1>About</h1>
-
-      <h2>Kevin Valmorbida <small>- Software Engineer</small></h2>
+      <h1>Kevin Valmorbida</h1>
+      <p><em>Software Engineer</em></p>
 
       <p>
         Full Stack Software Developer with solid experience in .NET, C#,
@@ -112,12 +155,35 @@
           </div>
         </article>
       </div>
+
+      <h2>Latest posts</h2>
+      <!-- Keep the three newest posts, newest first -->
+      <ul class="post-index">
+        <li>
+          <a href="/blog/back-to-simplicity">Back to Simplicity</a>
+          <time datetime="2026-04-10">Apr 10, 2026</time>
+        </li>
+        <li>
+          <a href="/blog/enhanced-software-engineers"
+            >Enhanced Software Engineers</a
+          >
+          <time datetime="2025-04-09">Apr 9, 2025</time>
+        </li>
+        <li>
+          <a href="/blog/my-first-post">Welcome to my blog</a>
+          <time datetime="2024-08-26">Aug 26, 2024</time>
+        </li>
+      </ul>
+      <p><a href="/blog/">All posts →</a></p>
     </main>
 
     <!-- Footer -->
     <footer>
       <div class="footer-inner">
-        <span>Kevin Valmorbida - Software Engineer</span>
+        <span class="footer-credits"
+          >Kevin Valmorbida - Software Engineer ·
+          <a href="/design/">Colophon</a></span
+        >
         <div class="footer-links">
           <a
             href="https://www.linkedin.com/in/kevinvalmorbida/"

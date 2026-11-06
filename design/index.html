@@ -12,6 +12,9 @@
   <meta property="og:title" content="Design System — Sepia Typographic Style">
   <meta property="og:description" content="The visual language of kevinvalmo.github.io — a sepia typographic system inspired by letterpress newspapers and ink-on-parchment printing.">
   <meta property="og:image" content="https://kevinvalmo.github.io/public/limone-garda.jpg">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="540">
+  <meta property="og:image:alt" content="Limone, Garda Lake">
   <meta property="og:url" content="https://kevinvalmo.github.io/design/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../favicon.ico" sizes="32x32">
@@ -23,10 +26,12 @@
 <body>
   <!-- Header -->
   <header>
+    <div class="masthead">
+      <a class="masthead-title" href="/">Kevin Valmorbida</a>
+    </div>
     <nav aria-label="Main">
       <a href="/blog/">Blog <span aria-hidden="true">📖</span></a>
       <a href="/">About <span aria-hidden="true">🧑‍🦰</span></a>
-      <a href="/design/" aria-current="page">Design <span aria-hidden="true">🖋️</span></a>
     </nav>
   </header>
 
@@ -235,8 +240,11 @@
     <p>
       Sizes follow a classical editorial progression expressed in <code>rem</code> units.
       The base size is set slightly above 1rem for improved screen readability of the serif face.
+      Tables that may be wider than a phone screen, like this one, sit in a
+      <code>.table-scroll</code> wrapper that scrolls horizontally.
     </p>
 
+    <div class="table-scroll">
     <table>
       <thead>
         <tr>
@@ -274,7 +282,7 @@
         <tr>
           <td><code>--text-2xl</code></td>
           <td>1.625 rem</td>
-          <td style="font-size: var(--text-2xl);">h2 heading</td>
+          <td style="font-size: var(--text-2xl);">h2 heading, masthead</td>
         </tr>
         <tr>
           <td><code>--text-3xl</code></td>
@@ -289,10 +297,11 @@
         <tr>
           <td><code>--text-5xl</code></td>
           <td>3.25 rem</td>
-          <td style="font-size: var(--text-5xl);">Masthead</td>
+          <td style="font-size: var(--text-5xl);">Extra-large display</td>
         </tr>
       </tbody>
     </table>
+    </div>
 
     <!-- ── Headings ────────────────────────────────────────── -->
     <h2>Headings</h2>
@@ -415,6 +424,31 @@
       </tbody>
     </table>
 
+    <!-- ── Layout ──────────────────────────────────────────── -->
+    <h2>Layout</h2>
+    <p>
+      Two tokens set the page frame. The content column is capped at <code>--container-width</code>,
+      which keeps body text around 75 characters per line; the footer row shares the same box,
+      so its text lines up with the content.
+      <code>--masthead-height</code> fixes the height of the masthead row and doubles as the
+      header's negative sticky offset. The body is a flex column, so on short pages the footer
+      still sits at the bottom of the window.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Token</th>
+          <th>Value</th>
+          <th>Used for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><code>--container-width</code></td><td>42 rem</td><td>Content column, footer row</td></tr>
+        <tr><td><code>--masthead-height</code></td><td>3.5 rem</td><td>Masthead row, header sticky offset</td></tr>
+      </tbody>
+    </table>
+
     <!-- ── Components ─────────────────────────────────────── -->
     <h2>Components</h2>
 
@@ -439,19 +473,22 @@
     <h3>Post Card</h3>
     <p>
       Used in the blog listing (<code>/blog/</code>). Displayed in a two-column grid above
-      36 rem. Each card carries a 16:9 thumbnail, title, date, italic excerpt, and tags.
-      On hover the card lifts 2 px and the thumbnail zooms subtly.
+      36 rem. Each card is an <code>&lt;article&gt;</code> with a 16:9 thumbnail, title, date,
+      italic excerpt, and tags. Only the title is a link, so screen readers announce just the
+      title; the link's <code>::after</code> covers the whole card, which stays clickable
+      everywhere and draws the focus ring along its edge. On hover or focus the card lifts 2 px
+      and the thumbnail zooms subtly. Thumbnails in the first row load eagerly, the rest lazily.
     </p>
     <div class="ds-specimen">
-      <span class="ds-specimen-label">Post card — static example</span>
+      <span class="ds-specimen-label">Post card — live example</span>
       <div style="max-width: 20rem;">
-        <div class="post-card" style="pointer-events: none; cursor: default;">
+        <article class="post-card">
           <div class="post-card-thumb" style="background: var(--color-parchment); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
             <span aria-hidden="true">🗞️</span>
           </div>
           <div class="post-card-body">
             <div class="post-card-header">
-              <h2 class="post-card-title">Back to Simplicity</h2>
+              <h2 class="post-card-title"><a href="/blog/back-to-simplicity">Back to Simplicity</a></h2>
               <small><em><time datetime="2026-04-10">Apr 10, 2026</time></em></small>
             </div>
             <p>Why I no longer use frameworks, libraries and development tools for this blog.</p>
@@ -461,16 +498,31 @@
               <span class="tag">simplicity</span>
             </div>
           </div>
-        </div>
+        </article>
       </div>
+    </div>
+
+    <h3>Post Index</h3>
+    <p>
+      A compact list of posts, used for "Latest posts" on the home page: the title, a dotted
+      leader in <code>--color-rule-strong</code> and the date, like a table of contents.
+      Class: <code>.post-index</code> on a <code>&lt;ul&gt;</code>.
+    </p>
+    <div class="ds-specimen">
+      <span class="ds-specimen-label">Post index — example</span>
+      <ul class="post-index" style="margin: 0;">
+        <li><a href="/blog/back-to-simplicity">Back to Simplicity</a> <time datetime="2026-04-10">Apr 10, 2026</time></li>
+        <li><a href="/blog/enhanced-software-engineers">Enhanced Software Engineers</a> <time datetime="2025-04-09">Apr 9, 2025</time></li>
+      </ul>
     </div>
 
     <h3>Hero Image</h3>
     <p>
       Full-width banner at the top of each article page. Maximum height 22 rem,
       <code>object-fit: cover</code>. An absolute-positioned caption is overlaid
-      bottom-right with a semi-transparent background. Classes:
-      <code>.hero-image-wrap</code> and <code>.hero-caption</code>.
+      bottom-right with a semi-transparent background. The image is a
+      <code>&lt;picture&gt;</code>: an AVIF source with the JPEG as fallback, which is also the
+      <code>og:image</code>. Classes: <code>.hero-image-wrap</code> and <code>.hero-caption</code>.
     </p>
     <div class="ds-specimen">
       <span class="ds-specimen-label">Hero wrap — structural example</span>
@@ -492,21 +544,26 @@
       </p>
     </div>
 
-    <h3>Navigation</h3>
+    <h3>Header &amp; Navigation</h3>
     <p>
-      The sticky header uses a <code>3px double</code> bottom border in <code>--border</code>
-      — a double rule drawn from traditional newspaper column separators. Nav links are rendered
-      in <code>--font-sans</code> uppercase at <code>--text-xs</code> with generous
-      letter-spacing, giving a masthead-like character to the bar. The current page carries
-      <code>aria-current="page"</code> and keeps the hover look; keyboard focus shows an accent
-      outline via <code>:focus-visible</code>.
+      The header opens with the masthead: the site name in <code>--font-serif</code> bold at
+      <code>--text-2xl</code>, linking to the home page, above a thin rule. Below it, the nav row
+      renders links in <code>--font-sans</code> uppercase at <code>--text-xs</code> with generous
+      letter-spacing, closed by a <code>3px double</code> bottom border in <code>--border</code>
+      — a double rule drawn from traditional newspaper column separators. The header is sticky
+      with a negative offset equal to <code>--masthead-height</code>: the masthead scrolls away
+      and only the nav row stays pinned. The current page carries <code>aria-current="page"</code>
+      and keeps the hover look; keyboard focus shows an accent outline via
+      <code>:focus-visible</code>. Secondary pages, like this one, are linked from the footer.
     </p>
     <div class="ds-specimen">
-      <span class="ds-specimen-label">Navigation — static replica</span>
-      <div class="ds-nav-replica">
-        <span class="is-active">Blog <span aria-hidden="true">📖</span></span>
-        <span>About <span aria-hidden="true">🧑‍🦰</span></span>
-        <span>Design <span aria-hidden="true">🖋️</span></span>
+      <span class="ds-specimen-label">Header — static replica</span>
+      <div class="ds-header-replica">
+        <div class="masthead"><span class="masthead-title">Kevin Valmorbida</span></div>
+        <div class="ds-nav-replica">
+          <span class="is-active">Blog <span aria-hidden="true">📖</span></span>
+          <span>About <span aria-hidden="true">🧑‍🦰</span></span>
+        </div>
       </div>
     </div>
 
@@ -573,7 +630,7 @@
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <span>Kevin Valmorbida - Software Engineer</span>
+      <span class="footer-credits">Kevin Valmorbida - Software Engineer · <a href="/design/" aria-current="page">Colophon</a></span>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/kevinvalmorbida/" aria-label="LinkedIn">💼</a>
         <a href="https://github.com/KevinValmo" aria-label="GitHub">🐙</a>

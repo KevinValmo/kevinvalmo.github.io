@@ -24,11 +24,15 @@
       property="og:image"
       content="https://kevinvalmo.github.io/public/ponale-garda-lake.jpg"
     />
+    <meta property="og:image:width" content="1010" />
+    <meta property="og:image:height" content="505" />
+    <meta property="og:image:alt" content="Ponale, Garda Lake" />
     <meta
       property="og:url"
       content="https://kevinvalmo.github.io/blog/my-first-post"
     />
     <meta property="article:published_time" content="2024-08-26" />
+    <meta property="article:modified_time" content="2026-11-06" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="../favicon.ico" sizes="32x32" />
     <link rel="icon" href="../public/favicon.svg" type="image/svg+xml" />
@@ -40,14 +44,33 @@
       href="/feed.xml"
     />
     <link rel="stylesheet" href="../public/style.css" />
+    <!-- Structured data for search engines: data only, nothing executes -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Welcome to my blog",
+        "image": "https://kevinvalmo.github.io/public/ponale-garda-lake.jpg",
+        "datePublished": "2024-08-26",
+        "dateModified": "2026-11-06",
+        "author": {
+          "@type": "Person",
+          "name": "Kevin Valmorbida",
+          "url": "https://kevinvalmo.github.io/"
+        },
+        "mainEntityOfPage": "https://kevinvalmo.github.io/blog/my-first-post"
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header>
+      <div class="masthead">
+        <a class="masthead-title" href="/">Kevin Valmorbida</a>
+      </div>
       <nav aria-label="Main">
         <a href="/blog/">Blog <span aria-hidden="true">📖</span></a>
         <a href="/">About <span aria-hidden="true">🧑‍🦰</span></a>
-        <a href="/design/">Design <span aria-hidden="true">🖋️</span></a>
       </nav>
     </header>
 
@@ -55,13 +78,19 @@
     <main class="container">
       <article>
         <div class="hero-image-wrap">
-          <img
-            src="../public/ponale-garda-lake.jpg"
-            alt="Ponale, Garda Lake"
-            width="1010"
-            height="505"
-            fetchpriority="high"
-          />
+          <picture>
+            <source
+              srcset="../public/ponale-garda-lake.avif"
+              type="image/avif"
+            />
+            <img
+              src="../public/ponale-garda-lake.jpg"
+              alt="Ponale, Garda Lake"
+              width="1010"
+              height="505"
+              fetchpriority="high"
+            />
+          </picture>
           <span class="hero-caption"
             >Ponale, Garda Lake - Kevin Valmorbida</span
           >
@@ -85,7 +114,8 @@
           </div>
           <small
             ><em
-              ><span aria-hidden="true">⏳</span> 2 min read &nbsp;|&nbsp;
+              >By <a href="/" rel="author">Kevin Valmorbida</a> &nbsp;|&nbsp;
+              <span aria-hidden="true">⏳</span> 2 min read &nbsp;|&nbsp;
               <time datetime="2024-08-26">Aug 26, 2024</time></em
             ></small
           >
@@ -154,13 +184,11 @@
 
         <h2>This Blog's Setup</h2>
         <p>
-          The blog isn't completed yet but here please find the link to this
-          blog's
+          The source code of this blog is on
           <a href="https://github.com/KevinValmo/kevinvalmo.github.io"
-            >GitHub Repo</a
+            >GitHub</a
           >. I appreciate any feedback you may have on the blog's design,
-          content, or functionality and don't forget to star the repo if you
-          find it useful.
+          content, or functionality.
         </p>
 
         <h2>Conclusion</h2>
@@ -168,8 +196,9 @@
           I'm thrilled to be back and excited to share my thoughts and
           experiences with you. I hope you enjoy the content on my blog and find
           it useful. I'll do my best to keep it updated regularly. If you have
-          any questions or suggestions, please feel free to leave a comment, I'm
-          always happy to help. Thank you for reading, and I look forward to
+          any questions or suggestions, feel free to reach out on
+          <a href="https://www.linkedin.com/in/kevinvalmorbida/">LinkedIn</a>,
+          I'm always happy to help. Thank you for reading, and I look forward to
           connecting with you soon!
         </p>
 
@@ -195,7 +224,10 @@
     <!-- Footer -->
     <footer>
       <div class="footer-inner">
-        <span>Kevin Valmorbida - Software Engineer</span>
+        <span class="footer-credits"
+          >Kevin Valmorbida - Software Engineer ·
+          <a href="/design/">Colophon</a></span
+        >
         <div class="footer-links">
           <a
             href="https://www.linkedin.com/in/kevinvalmorbida/"
